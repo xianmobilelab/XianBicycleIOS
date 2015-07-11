@@ -7,6 +7,7 @@
 //
 
 #import "FirstViewController.h"
+#import <BaiduMapAPI/BMapKit.h>
 
 @interface FirstViewController ()
 
