@@ -15,6 +15,7 @@
 		10D5B6121B50EE1B000D723F /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 10D5B6111B50EE1B000D723F /* Images.xcassets */; };
 		10D5B6151B50EE1B000D723F /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 10D5B6131B50EE1B000D723F /* LaunchScreen.xib */; };
 		10D5B6211B50EE1B000D723F /* XianBicycleTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 10D5B6201B50EE1B000D723F /* XianBicycleTests.m */; };
+		35A7B1AF2BF61F07C3F02B4A /* libPods-XianBicycle.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 0D1954950CADA627EE01B30A /* libPods-XianBicycle.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -28,6 +29,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		0D1954950CADA627EE01B30A /* libPods-XianBicycle.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-XianBicycle.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		10D5B5FE1B50EE1B000D723F /* XianBicycle.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = XianBicycle.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		10D5B6021B50EE1B000D723F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		10D5B6031B50EE1B000D723F /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -43,6 +45,8 @@
 		10D5B61A1B50EE1B000D723F /* XianBicycleTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = XianBicycleTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		10D5B61F1B50EE1B000D723F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		10D5B6201B50EE1B000D723F /* XianBicycleTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = XianBicycleTests.m; sourceTree = "<group>"; };
+		2CAD465CA2CD788A8E57CA3F /* Pods-XianBicycle.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-XianBicycle.debug.xcconfig"; path = "Pods/Target Support Files/Pods-XianBicycle/Pods-XianBicycle.debug.xcconfig"; sourceTree = "<group>"; };
+		68709D92BDA3656259322C4A /* Pods-XianBicycle.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-XianBicycle.release.xcconfig"; path = "Pods/Target Support Files/Pods-XianBicycle/Pods-XianBicycle.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -50,6 +54,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				35A7B1AF2BF61F07C3F02B4A /* libPods-XianBicycle.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -63,12 +68,22 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		1002E5FFD3A50CC0C93D38F4 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				0D1954950CADA627EE01B30A /* libPods-XianBicycle.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		10D5B5F51B50EE1B000D723F = {
 			isa = PBXGroup;
 			children = (
 				10D5B6001B50EE1B000D723F /* XianBicycle */,
 				10D5B61D1B50EE1B000D723F /* XianBicycleTests */,
 				10D5B5FF1B50EE1B000D723F /* Products */,
+				7234174ABC42C43B17890D66 /* Pods */,
+				1002E5FFD3A50CC0C93D38F4 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -124,6 +139,15 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
+		7234174ABC42C43B17890D66 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				2CAD465CA2CD788A8E57CA3F /* Pods-XianBicycle.debug.xcconfig */,
+				68709D92BDA3656259322C4A /* Pods-XianBicycle.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -131,9 +155,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 10D5B6241B50EE1B000D723F /* Build configuration list for PBXNativeTarget "XianBicycle" */;
 			buildPhases = (
+				665A823A682BE622D27CA035 /* Check Pods Manifest.lock */,
 				10D5B5FA1B50EE1B000D723F /* Sources */,
 				10D5B5FB1B50EE1B000D723F /* Frameworks */,
 				10D5B5FC1B50EE1B000D723F /* Resources */,
+				8148A84C2375D8EFA399177A /* Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -218,6 +244,39 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		665A823A682BE622D27CA035 /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		8148A84C2375D8EFA399177A /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-XianBicycle/Pods-XianBicycle-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		10D5B5FA1B50EE1B000D723F /* Sources */ = {
@@ -351,6 +410,7 @@
 		};
 		10D5B6251B50EE1B000D723F /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 2CAD465CA2CD788A8E57CA3F /* Pods-XianBicycle.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = XianBicycle/Info.plist;
@@ -361,6 +421,7 @@
 		};
 		10D5B6261B50EE1B000D723F /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 68709D92BDA3656259322C4A /* Pods-XianBicycle.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = XianBicycle/Info.plist;
@@ -422,6 +483,7 @@
 				10D5B6261B50EE1B000D723F /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		10D5B6271B50EE1B000D723F /* Build configuration list for PBXNativeTarget "XianBicycleTests" */ = {
 			isa = XCConfigurationList;
@@ -430,6 +492,7 @@
 				10D5B6291B50EE1B000D723F /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
