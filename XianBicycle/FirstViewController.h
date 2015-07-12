@@ -8,14 +8,15 @@
 
 #import <UIKit/UIKit.h>
 #import <BaiduMapAPI/BMapKit.h>
+#import "XianBicycleService.h"
 
 @interface FirstViewController : UIViewController <BMKMapViewDelegate, BMKLocationServiceDelegate> {
-    BMKMapView* _mapView;
-    BMKLocationService* _locService;
+    BMKMapView *_mapView;
+    BMKLocationService *_locService;
     CLLocationCoordinate2D _loc;
 }
 
-- (void)initBaiduMap;
+@property (nonatomic, strong) XianBicycleService *_service;
 
 @end
 

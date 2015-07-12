@@ -8,7 +8,6 @@
 
 #import "FirstViewController.h"
 #import "XianBicycleConfig.h"
-//#import <BaiduMapAPI/BMapKit.h>
 
 @interface FirstViewController ()
 
@@ -16,10 +15,15 @@
 
 @implementation FirstViewController
 
+@synthesize _service;
+
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view, typically from a nib.
     [self initBaiduMap];
+    _service = [[XianBicycleService alloc] init];
+    
+    [self doSearchByTerm:@"绿地"];
 }
 
 - (void)viewWillAppear:(BOOL)animated
@@ -40,6 +44,8 @@
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
+
+#pragma mark - Private methods
 
 - (void)initBaiduMap {
     if (_mapView == nil) {
@@ -70,6 +76,14 @@
     _mapView.userTrackingMode = BMKUserTrackingModeFollow;//设置定位的状态
     _mapView.showsUserLocation = YES;//显示定位图层
 }
+
+- (void)doSearchByTerm: (NSString *)term {
+    RequestTerm* request = [[RequestTerm alloc] init];
+    [request setTerm:term];
+    [_service searchByTerm:request withDelegate:nil];
+}
+
+#pragma mark - BaiduMap Delegate
 
 //实现相关delegate 处理位置信息更新
 //处理方向变更信息
