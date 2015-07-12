@@ -9,12 +9,20 @@
 /* Begin PBXBuildFile section */
 		10D5B6041B50EE1B000D723F /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 10D5B6031B50EE1B000D723F /* main.m */; };
 		10D5B6071B50EE1B000D723F /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 10D5B6061B50EE1B000D723F /* AppDelegate.m */; };
-		10D5B60A1B50EE1B000D723F /* FirstViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 10D5B6091B50EE1B000D723F /* FirstViewController.m */; };
 		10D5B60D1B50EE1B000D723F /* SecondViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 10D5B60C1B50EE1B000D723F /* SecondViewController.m */; };
 		10D5B6101B50EE1B000D723F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 10D5B60E1B50EE1B000D723F /* Main.storyboard */; };
 		10D5B6121B50EE1B000D723F /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 10D5B6111B50EE1B000D723F /* Images.xcassets */; };
 		10D5B6151B50EE1B000D723F /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 10D5B6131B50EE1B000D723F /* LaunchScreen.xib */; };
 		10D5B6211B50EE1B000D723F /* XianBicycleTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 10D5B6201B50EE1B000D723F /* XianBicycleTests.m */; };
+		10F739041B51FCCE00DBD388 /* BaiduMapAPI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 10F739031B51FCCE00DBD388 /* BaiduMapAPI.framework */; };
+		10F7390A1B51FD8D00DBD388 /* mapapi.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 10F739091B51FD8D00DBD388 /* mapapi.bundle */; };
+		10F7390C1B51FDF600DBD388 /* FirstViewController.mm in Sources */ = {isa = PBXBuildFile; fileRef = 10F7390B1B51FDF600DBD388 /* FirstViewController.mm */; };
+		10F7390E1B51FE4A00DBD388 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 10F7390D1B51FE4A00DBD388 /* CoreLocation.framework */; };
+		10F739101B51FE5200DBD388 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 10F7390F1B51FE5200DBD388 /* QuartzCore.framework */; };
+		10F739121B51FE5A00DBD388 /* OpenGLES.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 10F739111B51FE5A00DBD388 /* OpenGLES.framework */; };
+		10F739141B51FE6500DBD388 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 10F739131B51FE6500DBD388 /* SystemConfiguration.framework */; };
+		10F739161B51FE7100DBD388 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 10F739151B51FE7100DBD388 /* CoreGraphics.framework */; };
+		10F739181B51FE7B00DBD388 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 10F739171B51FE7B00DBD388 /* Security.framework */; };
 		35A7B1AF2BF61F07C3F02B4A /* libPods-XianBicycle.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 0D1954950CADA627EE01B30A /* libPods-XianBicycle.a */; };
 /* End PBXBuildFile section */
 
@@ -36,7 +44,6 @@
 		10D5B6051B50EE1B000D723F /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		10D5B6061B50EE1B000D723F /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		10D5B6081B50EE1B000D723F /* FirstViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FirstViewController.h; sourceTree = "<group>"; };
-		10D5B6091B50EE1B000D723F /* FirstViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FirstViewController.m; sourceTree = "<group>"; };
 		10D5B60B1B50EE1B000D723F /* SecondViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SecondViewController.h; sourceTree = "<group>"; };
 		10D5B60C1B50EE1B000D723F /* SecondViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SecondViewController.m; sourceTree = "<group>"; };
 		10D5B60F1B50EE1B000D723F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -45,6 +52,15 @@
 		10D5B61A1B50EE1B000D723F /* XianBicycleTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = XianBicycleTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		10D5B61F1B50EE1B000D723F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		10D5B6201B50EE1B000D723F /* XianBicycleTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = XianBicycleTests.m; sourceTree = "<group>"; };
+		10F739031B51FCCE00DBD388 /* BaiduMapAPI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = BaiduMapAPI.framework; path = Libaries/BaiduMap/BaiduMapAPI.framework; sourceTree = "<group>"; };
+		10F739091B51FD8D00DBD388 /* mapapi.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = mapapi.bundle; sourceTree = "<group>"; };
+		10F7390B1B51FDF600DBD388 /* FirstViewController.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = FirstViewController.mm; sourceTree = "<group>"; };
+		10F7390D1B51FE4A00DBD388 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
+		10F7390F1B51FE5200DBD388 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
+		10F739111B51FE5A00DBD388 /* OpenGLES.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGLES.framework; path = System/Library/Frameworks/OpenGLES.framework; sourceTree = SDKROOT; };
+		10F739131B51FE6500DBD388 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
+		10F739151B51FE7100DBD388 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		10F739171B51FE7B00DBD388 /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
 		2CAD465CA2CD788A8E57CA3F /* Pods-XianBicycle.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-XianBicycle.debug.xcconfig"; path = "Pods/Target Support Files/Pods-XianBicycle/Pods-XianBicycle.debug.xcconfig"; sourceTree = "<group>"; };
 		68709D92BDA3656259322C4A /* Pods-XianBicycle.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-XianBicycle.release.xcconfig"; path = "Pods/Target Support Files/Pods-XianBicycle/Pods-XianBicycle.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -54,6 +70,13 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				10F739181B51FE7B00DBD388 /* Security.framework in Frameworks */,
+				10F739161B51FE7100DBD388 /* CoreGraphics.framework in Frameworks */,
+				10F739141B51FE6500DBD388 /* SystemConfiguration.framework in Frameworks */,
+				10F739121B51FE5A00DBD388 /* OpenGLES.framework in Frameworks */,
+				10F739101B51FE5200DBD388 /* QuartzCore.framework in Frameworks */,
+				10F7390E1B51FE4A00DBD388 /* CoreLocation.framework in Frameworks */,
+				10F739041B51FCCE00DBD388 /* BaiduMapAPI.framework in Frameworks */,
 				35A7B1AF2BF61F07C3F02B4A /* libPods-XianBicycle.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -71,6 +94,13 @@
 		1002E5FFD3A50CC0C93D38F4 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				10F739171B51FE7B00DBD388 /* Security.framework */,
+				10F739151B51FE7100DBD388 /* CoreGraphics.framework */,
+				10F739131B51FE6500DBD388 /* SystemConfiguration.framework */,
+				10F739111B51FE5A00DBD388 /* OpenGLES.framework */,
+				10F7390F1B51FE5200DBD388 /* QuartzCore.framework */,
+				10F7390D1B51FE4A00DBD388 /* CoreLocation.framework */,
+				10F739031B51FCCE00DBD388 /* BaiduMapAPI.framework */,
 				0D1954950CADA627EE01B30A /* libPods-XianBicycle.a */,
 			);
 			name = Frameworks;
@@ -99,10 +129,11 @@
 		10D5B6001B50EE1B000D723F /* XianBicycle */ = {
 			isa = PBXGroup;
 			children = (
+				10F739071B51FD1500DBD388 /* other */,
 				10D5B6051B50EE1B000D723F /* AppDelegate.h */,
 				10D5B6061B50EE1B000D723F /* AppDelegate.m */,
 				10D5B6081B50EE1B000D723F /* FirstViewController.h */,
-				10D5B6091B50EE1B000D723F /* FirstViewController.m */,
+				10F7390B1B51FDF600DBD388 /* FirstViewController.mm */,
 				10D5B60B1B50EE1B000D723F /* SecondViewController.h */,
 				10D5B60C1B50EE1B000D723F /* SecondViewController.m */,
 				10D5B60E1B50EE1B000D723F /* Main.storyboard */,
@@ -137,6 +168,22 @@
 				10D5B61F1B50EE1B000D723F /* Info.plist */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		10F739071B51FD1500DBD388 /* other */ = {
+			isa = PBXGroup;
+			children = (
+				10F739081B51FD3F00DBD388 /* BaiduMap */,
+			);
+			path = other;
+			sourceTree = "<group>";
+		};
+		10F739081B51FD3F00DBD388 /* BaiduMap */ = {
+			isa = PBXGroup;
+			children = (
+				10F739091B51FD8D00DBD388 /* mapapi.bundle */,
+			);
+			path = BaiduMap;
 			sourceTree = "<group>";
 		};
 		7234174ABC42C43B17890D66 /* Pods */ = {
@@ -231,6 +278,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				10D5B6101B50EE1B000D723F /* Main.storyboard in Resources */,
+				10F7390A1B51FD8D00DBD388 /* mapapi.bundle in Resources */,
 				10D5B6151B50EE1B000D723F /* LaunchScreen.xib in Resources */,
 				10D5B6121B50EE1B000D723F /* Images.xcassets in Resources */,
 			);
@@ -285,7 +333,7 @@
 			files = (
 				10D5B60D1B50EE1B000D723F /* SecondViewController.m in Sources */,
 				10D5B6071B50EE1B000D723F /* AppDelegate.m in Sources */,
-				10D5B60A1B50EE1B000D723F /* FirstViewController.m in Sources */,
+				10F7390C1B51FDF600DBD388 /* FirstViewController.mm in Sources */,
 				10D5B6041B50EE1B000D723F /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -413,6 +461,11 @@
 			baseConfigurationReference = 2CAD465CA2CD788A8E57CA3F /* Pods-XianBicycle.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Libaries/BaiduMap",
+				);
+				GCC_INPUT_FILETYPE = sourcecode.cpp.objcpp;
 				INFOPLIST_FILE = XianBicycle/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -424,6 +477,11 @@
 			baseConfigurationReference = 68709D92BDA3656259322C4A /* Pods-XianBicycle.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Libaries/BaiduMap",
+				);
+				GCC_INPUT_FILETYPE = sourcecode.cpp.objcpp;
 				INFOPLIST_FILE = XianBicycle/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
