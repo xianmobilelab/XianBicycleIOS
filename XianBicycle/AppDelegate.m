@@ -7,6 +7,7 @@
 //
 
 #import "AppDelegate.h"
+#import "XianBicycleConfig.h"
 
 @interface AppDelegate ()
 
@@ -16,7 +17,14 @@
 
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
-    // Override point for customization after application launch.
+    _mapManager = [[BMKMapManager alloc]init];
+    // 如果要关注网络及授权验证事件，请设定     generalDelegate参数
+    BOOL ret = [_mapManager start:BAIDUMAP_KEY  generalDelegate:nil];
+    if (!ret) {
+        NSLog(@"manager start failed!");
+    }
+    // Add the navigation controller's view to the window and display.
+    [self.window makeKeyAndVisible];
     return YES;
 }
 
