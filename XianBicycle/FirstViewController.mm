@@ -22,8 +22,7 @@
     // Do any additional setup after loading the view, typically from a nib.
     [self initBaiduMap];
     _service = [[XianBicycleService alloc] init];
-    
-    [self doSearchByTerm:@"绿地"];
+//    [self doSearchByTerm:@"绿地"];
 }
 
 - (void)viewWillAppear:(BOOL)animated
@@ -59,12 +58,6 @@
     [_mapView setCenterCoordinate:loc];
 #endif
     // Set location
-//    [_mapView updateLocationData:userLocation];
-//    //设置定位精确度，默认：kCLLocationAccuracyBest
-//    [BMKLocationServicesetLocationDesiredAccuracy:kCLLocationAccuracyNearestTenMeters];
-//    //指定最小距离更新(米)，默认：kCLDistanceFilterNone
-//    [BMKLocationServicesetLocationDistanceFilter:100.f];
-    
     NSLog(@"进入普通定位态");
     //初始化BMKLocationService
     _locService = [[BMKLocationService alloc]init];
@@ -78,9 +71,17 @@
 }
 
 - (void)doSearchByTerm: (NSString *)term {
-    RequestTerm* request = [[RequestTerm alloc] init];
+    RequestTerm *request = [[RequestTerm alloc] init];
     [request setTerm:term];
     [_service searchByTerm:request withDelegate:nil];
+}
+
+- (void)doSearchByLocation: (CLLocationCoordinate2D) location withDistance: (double) distance {
+    RequestLocation *requestLocation = [[RequestLocation alloc] init];
+    requestLocation.lat = [[NSNumber alloc] initWithDouble:location.latitude];
+    requestLocation.lng = [[NSNumber alloc] initWithDouble:location.longitude];
+    requestLocation.distance = [[NSNumber alloc] initWithDouble:distance];
+    [_service searchByLocation:requestLocation withDelegate:nil];
 }
 
 #pragma mark - BaiduMap Delegate
@@ -97,11 +98,17 @@
 - (void)didUpdateBMKUserLocation:(BMKUserLocation *)userLocation
 {
     [_mapView updateLocationData:userLocation];
+//    //设置定位精确度，默认：kCLLocationAccuracyBest
+//    [BMKLocationServicesetLocationDesiredAccuracy:kCLLocationAccuracyNearestTenMeters];
+//    //指定最小距离更新(米)，默认：kCLDistanceFilterNone
+//    [BMKLocationServicesetLocationDistanceFilter:100.f];
     [_mapView setCenterCoordinate:userLocation.location.coordinate];
     NSLog(@"didUpdateUserLocation lat %f,long %f",userLocation.location.coordinate.latitude,userLocation.location.coordinate.longitude);
-    
     _loc = userLocation.location.coordinate;
     [_locService stopUserLocationService];
+    
+    // start search by location
+    [self doSearchByLocation:_loc withDistance:2000.0];
 }
 
 - (void)didStopLocatingUser

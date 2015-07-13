@@ -18,7 +18,7 @@ NSString *const REQUEST_TERM_KEY = @"term";
 {
     NSString *jsonString = nil;
     @try {
-        NSMutableDictionary *jsonDict = [NSMutableDictionary dictionaryWithCapacity:5];
+        NSMutableDictionary *jsonDict = [NSMutableDictionary dictionaryWithCapacity:1];
         [jsonDict setObject:self.term forKey:REQUEST_TERM_KEY];
         jsonString = [NSString jsonStringWithObject:jsonDict];
         NSLog(@"RequestTerm JSON string: %@", jsonString);
@@ -27,7 +27,6 @@ NSString *const REQUEST_TERM_KEY = @"term";
         NSLog(@"%@",[e description]);
     }
     return jsonString;
-//    return @"{\"term\":\"绿地\"}";
 }
 
 @end
