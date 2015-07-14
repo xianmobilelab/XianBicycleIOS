@@ -16,6 +16,4 @@
 - (void)searchByLocation: (RequestLocation *) param withDelegate: (id)delegate;
 - (void)searchByTerm: (RequestTerm *) param withDelegate: (id)delegate;
 
-- (void)doSearch: (BaseRequest *) param withDelegate: (id)delegate;
-
 @end

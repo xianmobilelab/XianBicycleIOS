@@ -15,7 +15,7 @@
  * Xian pub Bicycle net work
  * https://github.com/JustinFeng/xian-pub-bicycle
  *
- * Thanks at Feng Jia @Thoughtworks
+ * Thanks for Feng Jia @Thoughtworks
  *
  ***************************************************/
 

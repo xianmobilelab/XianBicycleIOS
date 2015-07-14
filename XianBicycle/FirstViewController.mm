@@ -23,7 +23,11 @@
     // Do any additional setup after loading the view, typically from a nib.
     [self initBaiduMap];
     _service = [[XianBicycleService alloc] init];
-//    [self doSearchByTerm:@"绿地"];
+    
+    UIBarButtonItem *item =
+    [[UIBarButtonItem alloc] initWithTitle:@"Search" style:UIBarButtonItemStylePlain target:self action:@selector(searchCurrentLocation)];
+    
+    self.navigationItem.rightBarButtonItem = item;
 }
 
 - (void)viewWillAppear:(BOOL)animated
@@ -58,6 +62,10 @@
     _loc = loc;
     [_mapView setCenterCoordinate:loc];
 #endif
+}
+
+- (void)searchCurrentLocation
+{
     // Set location
     NSLog(@"进入普通定位态");
     //初始化BMKLocationService
@@ -85,7 +93,7 @@
     [_service searchByLocation:requestLocation withDelegate:self];
 }
 
-- (void)addMarkerInMap: (BicycleSetItem *) item
+- (void)addMarkerToMap: (BicycleSetItem *) item
 {
     // 添加一个PointAnnotation
     NSLog(@"%@, %@", item.sitename, item.location);
@@ -107,7 +115,7 @@
             NSArray *siteList = response.siteList;
             for (int i = 0; i < [siteList count]; i++) {
                 BicycleSetItem *item = [siteList objectAtIndex:i];
-                [self addMarkerInMap:item];
+                [self addMarkerToMap:item];
             }
         }
     } else {
