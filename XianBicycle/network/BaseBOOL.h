@@ -1,9 +1,9 @@
 //
 //  BaseBOOL.h
-//  CarNurse
+//  XianBicycle
 //
-//  Created by delay on 14-8-16.
-//  Copyright (c) 2014年 studio. All rights reserved.
+//  Created by Shuai Zhang on 7/12/15.
+//  Copyright (c) 2015 ZhangShuai. All rights reserved.
 //
 
 #import <Foundation/Foundation.h>

@@ -8,6 +8,15 @@
 
 #import "ResponseBicycleSet.h"
 
+NSString *const RESPONSE_BICYCLE_SET_SITEID_KEY     = @"siteid";
+NSString *const RESPONSE_BICYCLE_SET_SITENAME_KEY   = @"sitename";
+NSString *const RESPONSE_BICYCLE_SET_LOCATION_KEY   = @"location";
+NSString *const RESPONSE_BICYCLE_SET_LATITUDE_KEY   = @"latitude";
+NSString *const RESPONSE_BICYCLE_SET_LONGITUDE_KEY  = @"longitude";
+NSString *const RESPONSE_BICYCLE_SET_DISTANCE_KEY   = @"distance";
+NSString *const RESPONSE_BICYCLE_SET_EMPTYNUM_KEY   = @"emptynum";
+NSString *const RESPONSE_BICYCLE_SET_LOCKNUM_KEY    = @"locknum";
+
 @implementation BicycleSetItem
 
 @synthesize siteid;
@@ -32,14 +41,14 @@
         for (int i = 0; i < [list count]; i++) {
             id itemObject = [list objectAtIndex:i];
             BicycleSetItem *item = [[BicycleSetItem alloc] init];
-            item.siteid = [itemObject objectForKey:@"siteid"];
-            item.sitename = [itemObject objectForKey:@"sitename"];
-            item.location = [itemObject objectForKey:@"location"];
-            item.latitude = [itemObject objectForKey:@"latitude"];
-            item.longitude = [itemObject objectForKey:@"longitude"];
-            item.distance = [itemObject objectForKey:@"distance"];
-            item.emptynum = [itemObject objectForKey:@"emptynum"];
-            item.locknum = [itemObject objectForKey:@"locknum"];
+            item.siteid = [itemObject objectForKey:RESPONSE_BICYCLE_SET_SITEID_KEY];
+            item.sitename = [itemObject objectForKey:RESPONSE_BICYCLE_SET_SITENAME_KEY];
+            item.location = [itemObject objectForKey:RESPONSE_BICYCLE_SET_LOCATION_KEY];
+            item.latitude = [itemObject objectForKey:RESPONSE_BICYCLE_SET_LATITUDE_KEY];
+            item.longitude = [itemObject objectForKey:RESPONSE_BICYCLE_SET_LONGITUDE_KEY];
+            item.distance = [itemObject objectForKey:RESPONSE_BICYCLE_SET_DISTANCE_KEY];
+            item.emptynum = [itemObject objectForKey:RESPONSE_BICYCLE_SET_EMPTYNUM_KEY];
+            item.locknum = [itemObject objectForKey:RESPONSE_BICYCLE_SET_LOCKNUM_KEY];
             [itemObjectList addObject:item];
         }
         self.siteList = [itemObjectList copy];
