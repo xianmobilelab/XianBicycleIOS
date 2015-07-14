@@ -44,6 +44,7 @@
 
 /* Begin PBXFileReference section */
 		0D1954950CADA627EE01B30A /* libPods-XianBicycle.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-XianBicycle.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		1038415F1B54D2DD001F9762 /* XianBicycleServiceProtocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XianBicycleServiceProtocol.h; sourceTree = "<group>"; };
 		10D5B5FE1B50EE1B000D723F /* XianBicycle.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = XianBicycle.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		10D5B6021B50EE1B000D723F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		10D5B6031B50EE1B000D723F /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -226,6 +227,7 @@
 				10F739201B52149900DBD388 /* request */,
 				10F7391D1B52142800DBD388 /* XianBicycleService.h */,
 				10F7391E1B52142800DBD388 /* XianBicycleService.m */,
+				1038415F1B54D2DD001F9762 /* XianBicycleServiceProtocol.h */,
 			);
 			path = network;
 			sourceTree = "<group>";

@@ -35,8 +35,10 @@
 
     [manager GET:requestAPI parameters:nil success:^(AFHTTPRequestOperation *operation, id responseObject) {
         NSLog(@"JSON: %@", responseObject);
+        [delegate getDecodedData:nil withCode:NetworkCodeNoError];
     } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
         NSLog(@"Error: %@", error);
+        [delegate getDecodedData:error withCode:NetworkCodeUnknown];
     }];
 }
 

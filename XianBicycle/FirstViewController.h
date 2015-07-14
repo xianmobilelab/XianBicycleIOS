@@ -10,7 +10,7 @@
 #import <BaiduMapAPI/BMapKit.h>
 #import "XianBicycleService.h"
 
-@interface FirstViewController : UIViewController <BMKMapViewDelegate, BMKLocationServiceDelegate> {
+@interface FirstViewController : UIViewController <BMKMapViewDelegate, BMKLocationServiceDelegate, XianBicycleServiceProtocol> {
     BMKMapView *_mapView;
     BMKLocationService *_locService;
     CLLocationCoordinate2D _loc;

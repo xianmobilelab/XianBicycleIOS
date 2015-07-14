@@ -7,6 +7,7 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "XianBicycleServiceProtocol.h"
 #import "RequestLocation.h"
 #import "RequestTerm.h"
 

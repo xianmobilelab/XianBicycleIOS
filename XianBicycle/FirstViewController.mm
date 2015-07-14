@@ -73,7 +73,7 @@
 - (void)doSearchByTerm: (NSString *)term {
     RequestTerm *request = [[RequestTerm alloc] init];
     [request setTerm:term];
-    [_service searchByTerm:request withDelegate:nil];
+    [_service searchByTerm:request withDelegate:self];
 }
 
 - (void)doSearchByLocation: (CLLocationCoordinate2D) location withDistance: (double) distance {
@@ -81,7 +81,18 @@
     requestLocation.lat = [[NSNumber alloc] initWithDouble:location.latitude];
     requestLocation.lng = [[NSNumber alloc] initWithDouble:location.longitude];
     requestLocation.distance = [[NSNumber alloc] initWithDouble:distance];
-    [_service searchByLocation:requestLocation withDelegate:nil];
+    [_service searchByLocation:requestLocation withDelegate:self];
+}
+
+#pragma mark - Service protocol
+- (void)getDecodedData:(id)data withCode:(long)code
+{
+    if (code == NetworkCodeNoError) {
+        
+    } else {
+        UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@"Error" message:@"Network failed" delegate:self cancelButtonTitle:@"Cancel" otherButtonTitles:nil, nil];
+        [alertView show];
+    }
 }
 
 #pragma mark - BaiduMap Delegate
