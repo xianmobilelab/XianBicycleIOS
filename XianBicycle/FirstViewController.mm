@@ -8,6 +8,7 @@
 
 #import "FirstViewController.h"
 #import "XianBicycleConfig.h"
+#import "ResponseBicycleSet.h"
 
 @interface FirstViewController ()
 
@@ -84,11 +85,31 @@
     [_service searchByLocation:requestLocation withDelegate:self];
 }
 
+- (void)addMarkerInMap: (BicycleSetItem *) item
+{
+    // 添加一个PointAnnotation
+    NSLog(@"%@, %@", item.sitename, item.location);
+    BMKPointAnnotation* annotation = [[BMKPointAnnotation alloc]init];
+    CLLocationCoordinate2D coor;
+    coor.latitude = [item.latitude doubleValue];
+    coor.longitude = [item.longitude doubleValue];
+    annotation.coordinate = coor;
+    annotation.title =  item.sitename;
+    [_mapView addAnnotation:annotation];
+}
+
 #pragma mark - Service protocol
 - (void)getDecodedData:(id)data withCode:(long)code
 {
     if (code == NetworkCodeNoError) {
-        
+        if ([data isKindOfClass:[ResponseBicycleSet class]]) {
+            ResponseBicycleSet *response = data;
+            NSArray *siteList = response.siteList;
+            for (int i = 0; i < [siteList count]; i++) {
+                BicycleSetItem *item = [siteList objectAtIndex:i];
+                [self addMarkerInMap:item];
+            }
+        }
     } else {
         UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@"Error" message:@"Network failed" delegate:self cancelButtonTitle:@"Cancel" otherButtonTitles:nil, nil];
         [alertView show];
@@ -119,7 +140,7 @@
     [_locService stopUserLocationService];
     
     // start search by location
-    [self doSearchByLocation:_loc withDistance:2000.0];
+    [self doSearchByLocation:_loc withDistance:1000.0];
 }
 
 - (void)didStopLocatingUser

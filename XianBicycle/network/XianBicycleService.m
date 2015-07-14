@@ -8,6 +8,7 @@
 
 #import "XianBicycleService.h"
 #import "XianBicycleNetwork.h"
+#import "ResponseBicycleSet.h"
 #import <AFNetworking.h>
 
 @implementation XianBicycleService
@@ -34,8 +35,10 @@
     manager.responseSerializer.acceptableContentTypes = [manager.responseSerializer.acceptableContentTypes setByAddingObject:@"text/html"];
 
     [manager GET:requestAPI parameters:nil success:^(AFHTTPRequestOperation *operation, id responseObject) {
-        NSLog(@"JSON: %@", responseObject);
-        [delegate getDecodedData:nil withCode:NetworkCodeNoError];
+//        NSLog(@"JSON: %@", responseObject);
+        ResponseBicycleSet *response = [[ResponseBicycleSet alloc] init];
+        response = [response getJSONResponse:responseObject];
+        [delegate getDecodedData:response withCode:NetworkCodeNoError];
     } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
         NSLog(@"Error: %@", error);
         [delegate getDecodedData:error withCode:NetworkCodeUnknown];

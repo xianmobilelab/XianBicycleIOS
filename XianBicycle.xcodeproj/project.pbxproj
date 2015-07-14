@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		103841641B54DCBA001F9762 /* BaseResponse.m in Sources */ = {isa = PBXBuildFile; fileRef = 103841631B54DCBA001F9762 /* BaseResponse.m */; };
+		103841671B54DD26001F9762 /* ResponseBicycleSet.m in Sources */ = {isa = PBXBuildFile; fileRef = 103841661B54DD26001F9762 /* ResponseBicycleSet.m */; };
 		10D5B6041B50EE1B000D723F /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 10D5B6031B50EE1B000D723F /* main.m */; };
 		10D5B6071B50EE1B000D723F /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 10D5B6061B50EE1B000D723F /* AppDelegate.m */; };
 		10D5B60D1B50EE1B000D723F /* SecondViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 10D5B60C1B50EE1B000D723F /* SecondViewController.m */; };
@@ -45,6 +47,10 @@
 /* Begin PBXFileReference section */
 		0D1954950CADA627EE01B30A /* libPods-XianBicycle.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-XianBicycle.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		1038415F1B54D2DD001F9762 /* XianBicycleServiceProtocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XianBicycleServiceProtocol.h; sourceTree = "<group>"; };
+		103841621B54DCBA001F9762 /* BaseResponse.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BaseResponse.h; sourceTree = "<group>"; };
+		103841631B54DCBA001F9762 /* BaseResponse.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BaseResponse.m; sourceTree = "<group>"; };
+		103841651B54DD26001F9762 /* ResponseBicycleSet.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ResponseBicycleSet.h; sourceTree = "<group>"; };
+		103841661B54DD26001F9762 /* ResponseBicycleSet.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ResponseBicycleSet.m; sourceTree = "<group>"; };
 		10D5B5FE1B50EE1B000D723F /* XianBicycle.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = XianBicycle.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		10D5B6021B50EE1B000D723F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		10D5B6031B50EE1B000D723F /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -250,6 +256,10 @@
 		10F739211B5214A900DBD388 /* response */ = {
 			isa = PBXGroup;
 			children = (
+				103841621B54DCBA001F9762 /* BaseResponse.h */,
+				103841631B54DCBA001F9762 /* BaseResponse.m */,
+				103841651B54DD26001F9762 /* ResponseBicycleSet.h */,
+				103841661B54DD26001F9762 /* ResponseBicycleSet.m */,
 			);
 			path = response;
 			sourceTree = "<group>";
@@ -401,6 +411,7 @@
 			files = (
 				10F7391F1B52142800DBD388 /* XianBicycleService.m in Sources */,
 				10F7392D1B52372400DBD388 /* NSString+JSONBuilder.m in Sources */,
+				103841671B54DD26001F9762 /* ResponseBicycleSet.m in Sources */,
 				10F739301B5237DE00DBD388 /* BaseBOOL.m in Sources */,
 				10F7392A1B522F9E00DBD388 /* RequestTerm.m in Sources */,
 				10D5B60D1B50EE1B000D723F /* SecondViewController.m in Sources */,
@@ -409,6 +420,7 @@
 				10F739271B52159A00DBD388 /* RequestLocation.m in Sources */,
 				10F739241B52152600DBD388 /* BaseRequest.m in Sources */,
 				10D5B6041B50EE1B000D723F /* main.m in Sources */,
+				103841641B54DCBA001F9762 /* BaseResponse.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
