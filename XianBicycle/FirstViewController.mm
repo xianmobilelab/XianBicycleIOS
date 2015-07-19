@@ -25,10 +25,11 @@
     _service = [[XianBicycleService alloc] init];
     
     UIBarButtonItem *item =
-    [[UIBarButtonItem alloc] initWithTitle:[NSString stringWithFormat:@"%@", NSLocalizedString(@"btn_search", nil)]
+    [[UIBarButtonItem alloc] initWithTitle:NSLocalizedString(@"btn_search", nil)
                                      style:UIBarButtonItemStylePlain target:self action:@selector(searchCurrentLocation)];
     
     self.navigationItem.rightBarButtonItem = item;
+    self.navigationItem.title = NSLocalizedString(@"tab_result", nil);
 }
 
 - (void)viewWillAppear:(BOOL)animated
@@ -107,6 +108,12 @@
     [_mapView addAnnotation:annotation];
 }
 
+- (void)showErrorAlertView:(NSString *)title withMessage:(NSString *)message
+{
+    UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:title message:message delegate:self cancelButtonTitle:NSLocalizedString(@"btn_cancel", nil) otherButtonTitles:nil, nil];
+    [alertView show];
+}
+
 #pragma mark - Service protocol
 - (void)getDecodedData:(id)data withCode:(long)code
 {
@@ -120,8 +127,8 @@
             }
         }
     } else {
-        NSString *title = [NSString stringWithFormat:@"%@", NSLocalizedString(@"msg_error", nil)];
-        NSString *message = [NSString stringWithFormat:@"%@", NSLocalizedString(@"msg_network_failed", nil)];
+        NSString *title = NSLocalizedString(@"msg_error", nil);
+        NSString *message = NSLocalizedString(@"msg_network_failed", nil);
         [self showErrorAlertView:title withMessage:message];
     }
 }
@@ -160,15 +167,9 @@
 
 - (void)didFailToLocateUserWithError:(NSError *)error
 {
-    NSString *title = [NSString stringWithFormat:@"%@", NSLocalizedString(@"msg_error", nil)];
-    NSString *message = [NSString stringWithFormat:@"%@", NSLocalizedString(@"msg_location_failed", nil)];
+    NSString *title = NSLocalizedString(@"msg_error", nil);
+    NSString *message = NSLocalizedString(@"msg_location_failed", nil);
     [self showErrorAlertView:title withMessage:message];
-}
-
-- (void)showErrorAlertView:(NSString *)title withMessage:(NSString *)message
-{
-    UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:title message:message delegate:self cancelButtonTitle:[NSString stringWithFormat:@"%@", NSLocalizedString(@"btn_cancel", nil)] otherButtonTitles:nil, nil];
-    [alertView show];
 }
 
 @end
