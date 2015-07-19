@@ -2,6 +2,7 @@
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7706" systemVersion="14D136" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="49e-Tb-3d3">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7703"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
         <!--First View Controller-->
@@ -35,29 +36,58 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" text="Second View" textAlignment="center" lineBreakMode="tailTruncation" minimumFontSize="10" translatesAutoresizingMaskIntoConstraints="NO" id="zEq-FU-wV5">
-                                <rect key="frame" x="195" y="279" width="209.5" height="41.5"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <fontDescription key="fontDescription" name="Helvetica" family="Helvetica" pointSize="36"/>
-                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Loaded by SecondViewController" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NDk-cv-Gan">
-                                <rect key="frame" x="192" y="329" width="215.5" height="17"/>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="请输入起点" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Si3-PP-oXr">
+                                <rect key="frame" x="16" y="115" width="568" height="30"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="查询条件" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Thf-6z-QWk">
+                                <rect key="frame" x="16" y="76" width="568" height="20.5"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="请输入终点" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Jja-Qq-2uw">
+                                <rect key="frame" x="16" y="157" width="568" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="r3w-PU-WlG">
+                                <rect key="frame" x="16" y="207" width="568" height="36"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="36" id="Su3-dh-ATR"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <state key="normal" title="搜索">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="doSearch:" destination="8rJ-Kc-sve" eventType="touchUpInside" id="pY5-51-eWU"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="NDk-cv-Gan" firstAttribute="top" secondItem="zEq-FU-wV5" secondAttribute="bottom" constant="8" symbolic="YES" id="Day-4N-Vmt"/>
-                            <constraint firstItem="NDk-cv-Gan" firstAttribute="centerX" secondItem="zEq-FU-wV5" secondAttribute="centerX" id="JgO-Fn-dHn"/>
-                            <constraint firstAttribute="centerX" secondItem="zEq-FU-wV5" secondAttribute="centerX" id="qqM-NS-xev"/>
-                            <constraint firstAttribute="centerY" secondItem="zEq-FU-wV5" secondAttribute="centerY" id="qzY-Ky-pLD"/>
+                            <constraint firstItem="Si3-PP-oXr" firstAttribute="top" secondItem="Thf-6z-QWk" secondAttribute="bottom" constant="18.5" id="8mi-QG-tW1"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="r3w-PU-WlG" secondAttribute="trailing" id="96t-N1-GbI"/>
+                            <constraint firstItem="Jja-Qq-2uw" firstAttribute="top" secondItem="Si3-PP-oXr" secondAttribute="bottom" constant="12" id="IUF-aj-fMf"/>
+                            <constraint firstItem="Thf-6z-QWk" firstAttribute="top" secondItem="L7p-HK-0SC" secondAttribute="bottom" constant="12" id="N7j-Ch-42r"/>
+                            <constraint firstItem="Jja-Qq-2uw" firstAttribute="trailing" secondItem="QS5-Rx-YEW" secondAttribute="trailingMargin" id="OJp-nh-awC"/>
+                            <constraint firstItem="Jja-Qq-2uw" firstAttribute="leading" secondItem="QS5-Rx-YEW" secondAttribute="leadingMargin" id="VJi-2B-Lye"/>
+                            <constraint firstItem="r3w-PU-WlG" firstAttribute="top" secondItem="Jja-Qq-2uw" secondAttribute="bottom" constant="20" id="Vck-3w-76h"/>
+                            <constraint firstItem="Thf-6z-QWk" firstAttribute="leading" secondItem="QS5-Rx-YEW" secondAttribute="leadingMargin" id="bud-jF-Bej"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="Si3-PP-oXr" secondAttribute="trailing" id="e1J-0I-Zt8"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="Thf-6z-QWk" secondAttribute="trailing" id="lZd-GU-5if"/>
+                            <constraint firstItem="r3w-PU-WlG" firstAttribute="leading" secondItem="QS5-Rx-YEW" secondAttribute="leadingMargin" id="pyd-bZ-znm"/>
+                            <constraint firstItem="Si3-PP-oXr" firstAttribute="leading" secondItem="QS5-Rx-YEW" secondAttribute="leadingMargin" id="yf5-GB-ubu"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="Jja-Qq-2uw" secondAttribute="trailing" id="zQH-B9-Rck"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="dTs-xd-h8i"/>
+                    <connections>
+                        <outlet property="endTextField" destination="Jja-Qq-2uw" id="6BU-im-MQL"/>
+                        <outlet property="startTextField" destination="Si3-PP-oXr" id="nQ3-n1-h6O"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4Nw-L8-lE0" sceneMemberID="firstResponder"/>
             </objects>

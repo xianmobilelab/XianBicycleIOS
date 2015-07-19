@@ -11,6 +11,11 @@
 
 @interface SecondViewController : UIViewController
 
+@property (weak, nonatomic) IBOutlet UITextField *endTextField;
+@property (weak, nonatomic) IBOutlet UITextField *startTextField;
+
+- (IBAction)doSearch:(id)sender;
+
 
 @end
 

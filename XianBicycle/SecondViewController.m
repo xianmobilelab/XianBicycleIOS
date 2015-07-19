@@ -25,4 +25,10 @@
     // Dispose of any resources that can be recreated.
 }
 
+- (IBAction)doSearch:(id)sender {
+    NSLog(@"start :%@", _startTextField.text);
+    NSLog(@"start :%@", _endTextField.text);
+}
+
+
 @end
