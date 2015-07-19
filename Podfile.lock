@@ -21,13 +21,16 @@ PODS:
     - AFNetworking/NSURLConnection
     - AFNetworking/NSURLSession
   - CRToast (0.0.7)
+  - MLPAutoCompleteTextField (1.5)
 
 DEPENDENCIES:
   - AFNetworking (~> 2.5.4)
   - CRToast (~> 0.0.7)
+  - MLPAutoCompleteTextField (~> 1.5)
 
 SPEC CHECKSUMS:
   AFNetworking: 05edc0ac4c4c8cf57bcf4b84be5b0744b6d8e71e
   CRToast: 99a28f4387def43b439ad88f957ce31357ff7373
+  MLPAutoCompleteTextField: ba4d507bbff2bd4f139d4197814fc8dd39caf77e
 
 COCOAPODS: 0.37.2
