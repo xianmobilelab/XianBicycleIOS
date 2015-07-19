@@ -10,6 +10,7 @@
 "btn_search" = "Search";
 
 "msg_error" = "Error";
+"msg_location" = "Location successful";
 
 "tab_search" = "Search";
 "tab_result" = "Result";

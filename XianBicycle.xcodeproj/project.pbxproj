@@ -11,6 +11,7 @@
 		103841671B54DD26001F9762 /* ResponseBicycleSet.m in Sources */ = {isa = PBXBuildFile; fileRef = 103841661B54DD26001F9762 /* ResponseBicycleSet.m */; };
 		105355551B5516EE0064A0D2 /* BaseBOOL.m in Sources */ = {isa = PBXBuildFile; fileRef = 105355541B5516EE0064A0D2 /* BaseBOOL.m */; };
 		1069AE7F1B5B834A00341DCA /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 1069AE811B5B834A00341DCA /* Localizable.strings */; };
+		1069AE881B5B927000341DCA /* CommonUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = 1069AE871B5B927000341DCA /* CommonUtils.m */; };
 		10D5B6041B50EE1B000D723F /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 10D5B6031B50EE1B000D723F /* main.m */; };
 		10D5B6071B50EE1B000D723F /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 10D5B6061B50EE1B000D723F /* AppDelegate.m */; };
 		10D5B60D1B50EE1B000D723F /* SecondViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 10D5B60C1B50EE1B000D723F /* SecondViewController.m */; };
@@ -58,6 +59,8 @@
 		1069AE7C1B5B81D600341DCA /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/LaunchScreen.strings"; sourceTree = "<group>"; };
 		1069AE801B5B834A00341DCA /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		1069AE821B5B834B00341DCA /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/Localizable.strings"; sourceTree = "<group>"; };
+		1069AE861B5B927000341DCA /* CommonUtils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CommonUtils.h; sourceTree = "<group>"; };
+		1069AE871B5B927000341DCA /* CommonUtils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CommonUtils.m; sourceTree = "<group>"; };
 		10D5B5FE1B50EE1B000D723F /* XianBicycle.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = XianBicycle.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		10D5B6021B50EE1B000D723F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		10D5B6031B50EE1B000D723F /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -138,6 +141,16 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		1069AE851B5B924000341DCA /* utils */ = {
+			isa = PBXGroup;
+			children = (
+				1069AE861B5B927000341DCA /* CommonUtils.h */,
+				1069AE871B5B927000341DCA /* CommonUtils.m */,
+			);
+			name = utils;
+			path = network/utils;
+			sourceTree = "<group>";
+		};
 		10D5B5F51B50EE1B000D723F = {
 			isa = PBXGroup;
 			children = (
@@ -161,6 +174,7 @@
 		10D5B6001B50EE1B000D723F /* XianBicycle */ = {
 			isa = PBXGroup;
 			children = (
+				1069AE851B5B924000341DCA /* utils */,
 				10F7391C1B5213DB00DBD388 /* network */,
 				10F739191B52011000DBD388 /* common */,
 				10F739071B51FD1500DBD388 /* other */,
@@ -428,6 +442,7 @@
 				105355551B5516EE0064A0D2 /* BaseBOOL.m in Sources */,
 				10F739241B52152600DBD388 /* BaseRequest.m in Sources */,
 				10D5B6041B50EE1B000D723F /* main.m in Sources */,
+				1069AE881B5B927000341DCA /* CommonUtils.m in Sources */,
 				103841641B54DCBA001F9762 /* BaseResponse.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -9,6 +9,8 @@
 #import "FirstViewController.h"
 #import "XianBicycleConfig.h"
 #import "ResponseBicycleSet.h"
+#import "CommonUtils.h"
+#import <CRToast/CRToast.h>
 
 @interface FirstViewController ()
 
@@ -114,6 +116,21 @@
     [alertView show];
 }
 
+- (void)showLocationSuccessfulToast
+{
+    NSDictionary *options = @{
+                              kCRToastTextKey : NSLocalizedString(@"msg_location", nil),
+                              kCRToastTextAlignmentKey : @(NSTextAlignmentCenter),
+                              kCRToastBackgroundColorKey : UIColorFromRGBA(0x45ee5e, 1.0),
+                              kCRToastTextColorKey : [UIColor blackColor],
+                              kCRToastAnimationInTypeKey : @(CRToastAnimationTypeGravity),
+                              kCRToastAnimationOutTypeKey : @(CRToastAnimationTypeGravity),
+                              kCRToastAnimationInDirectionKey : @(CRToastAnimationDirectionLeft),
+                              kCRToastAnimationOutDirectionKey : @(CRToastAnimationDirectionRight)
+                              };
+    [CRToastManager showNotificationWithOptions:options completionBlock:^{}];
+}
+
 #pragma mark - Service protocol
 - (void)getDecodedData:(id)data withCode:(long)code
 {
@@ -146,6 +163,7 @@
 //处理位置坐标更新
 - (void)didUpdateBMKUserLocation:(BMKUserLocation *)userLocation
 {
+    [self showLocationSuccessfulToast];
     [_mapView updateLocationData:userLocation];
 //    //设置定位精确度，默认：kCLLocationAccuracyBest
 //    [BMKLocationServicesetLocationDesiredAccuracy:kCLLocationAccuracyNearestTenMeters];

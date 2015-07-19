@@ -10,6 +10,7 @@
 "btn_search" = "搜索";
 
 "msg_error" = "出错啦";
+"msg_location" = "定位成功";
 
 "tab_search" = "搜索";
 "tab_result" = "结果";
