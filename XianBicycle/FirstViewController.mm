@@ -25,7 +25,8 @@
     _service = [[XianBicycleService alloc] init];
     
     UIBarButtonItem *item =
-    [[UIBarButtonItem alloc] initWithTitle:@"Search" style:UIBarButtonItemStylePlain target:self action:@selector(searchCurrentLocation)];
+    [[UIBarButtonItem alloc] initWithTitle:[NSString stringWithFormat:@"%@", NSLocalizedString(@"btn_search", nil)]
+                                     style:UIBarButtonItemStylePlain target:self action:@selector(searchCurrentLocation)];
     
     self.navigationItem.rightBarButtonItem = item;
 }
@@ -119,8 +120,9 @@
             }
         }
     } else {
-        UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@"Error" message:@"Network failed" delegate:self cancelButtonTitle:@"Cancel" otherButtonTitles:nil, nil];
-        [alertView show];
+        NSString *title = [NSString stringWithFormat:@"%@", NSLocalizedString(@"msg_error", nil)];
+        NSString *message = [NSString stringWithFormat:@"%@", NSLocalizedString(@"msg_network_failed", nil)];
+        [self showErrorAlertView:title withMessage:message];
     }
 }
 
@@ -158,7 +160,15 @@
 
 - (void)didFailToLocateUserWithError:(NSError *)error
 {
-    NSLog(@"Location error!");
+    NSString *title = [NSString stringWithFormat:@"%@", NSLocalizedString(@"msg_error", nil)];
+    NSString *message = [NSString stringWithFormat:@"%@", NSLocalizedString(@"msg_location_failed", nil)];
+    [self showErrorAlertView:title withMessage:message];
+}
+
+- (void)showErrorAlertView:(NSString *)title withMessage:(NSString *)message
+{
+    UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:title message:message delegate:self cancelButtonTitle:[NSString stringWithFormat:@"%@", NSLocalizedString(@"btn_cancel", nil)] otherButtonTitles:nil, nil];
+    [alertView show];
 }
 
 @end

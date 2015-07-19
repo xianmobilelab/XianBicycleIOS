@@ -1,0 +1,18 @@
+/* 
+  Localizable.strings
+  XianBicycle
+
+  Created by Shuai Zhang on 7/19/15.
+  Copyright (c) 2015 ZhangShuai. All rights reserved.
+*/
+
+"btn_cancel" = "Cancel";
+"btn_search" = "Search";
+
+"msg_error" = "Error";
+
+"tab_search" = "Search";
+"tab_result" = "Result";
+
+"msg_network_failed" = "Network failed, please check your network and try it later.";
+"msg_location_failed" = "Location failed, it is can not get location now.";
