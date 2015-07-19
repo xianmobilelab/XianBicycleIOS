@@ -12,6 +12,7 @@
 		105355551B5516EE0064A0D2 /* BaseBOOL.m in Sources */ = {isa = PBXBuildFile; fileRef = 105355541B5516EE0064A0D2 /* BaseBOOL.m */; };
 		1069AE7F1B5B834A00341DCA /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 1069AE811B5B834A00341DCA /* Localizable.strings */; };
 		1069AE881B5B927000341DCA /* CommonUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = 1069AE871B5B927000341DCA /* CommonUtils.m */; };
+		1069AE8B1B5C02F100341DCA /* NSString+NSStringUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = 1069AE8A1B5C02F100341DCA /* NSString+NSStringUtils.m */; };
 		10D5B6041B50EE1B000D723F /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 10D5B6031B50EE1B000D723F /* main.m */; };
 		10D5B6071B50EE1B000D723F /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 10D5B6061B50EE1B000D723F /* AppDelegate.m */; };
 		10D5B60D1B50EE1B000D723F /* SecondViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 10D5B60C1B50EE1B000D723F /* SecondViewController.m */; };
@@ -61,6 +62,8 @@
 		1069AE821B5B834B00341DCA /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/Localizable.strings"; sourceTree = "<group>"; };
 		1069AE861B5B927000341DCA /* CommonUtils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CommonUtils.h; sourceTree = "<group>"; };
 		1069AE871B5B927000341DCA /* CommonUtils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CommonUtils.m; sourceTree = "<group>"; };
+		1069AE891B5C02F100341DCA /* NSString+NSStringUtils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+NSStringUtils.h"; sourceTree = "<group>"; };
+		1069AE8A1B5C02F100341DCA /* NSString+NSStringUtils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+NSStringUtils.m"; sourceTree = "<group>"; };
 		10D5B5FE1B50EE1B000D723F /* XianBicycle.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = XianBicycle.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		10D5B6021B50EE1B000D723F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		10D5B6031B50EE1B000D723F /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -242,6 +245,8 @@
 				10F7392C1B52372400DBD388 /* NSString+JSONBuilder.m */,
 				10F7391A1B52013A00DBD388 /* XianBicycleConfig.h */,
 				10F7391B1B5210BB00DBD388 /* XianBicycleNetwork.h */,
+				1069AE891B5C02F100341DCA /* NSString+NSStringUtils.h */,
+				1069AE8A1B5C02F100341DCA /* NSString+NSStringUtils.m */,
 			);
 			name = common;
 			sourceTree = "<group>";
@@ -434,6 +439,7 @@
 				10F7391F1B52142800DBD388 /* XianBicycleService.m in Sources */,
 				10F7392D1B52372400DBD388 /* NSString+JSONBuilder.m in Sources */,
 				103841671B54DD26001F9762 /* ResponseBicycleSet.m in Sources */,
+				1069AE8B1B5C02F100341DCA /* NSString+NSStringUtils.m in Sources */,
 				10F7392A1B522F9E00DBD388 /* RequestTerm.m in Sources */,
 				10D5B60D1B50EE1B000D723F /* SecondViewController.m in Sources */,
 				10D5B6071B50EE1B000D723F /* AppDelegate.m in Sources */,

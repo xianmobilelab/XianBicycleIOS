@@ -7,6 +7,7 @@
 //
 
 #import "SecondViewController.h"
+#import "NSString+NSStringUtils.h"
 
 
 @interface SecondViewController ()
@@ -60,6 +61,9 @@
 #pragma mark - private methods
 - (void)searchByKeyWord:(NSString *)keyword
 {
+    if ([NSString isBlankString:keyword]) {
+        return;
+    }
     BMKSuggestionSearchOption *option = [[BMKSuggestionSearchOption alloc] init];
     option.cityname = @"西安市";
     option.keyword = keyword;
