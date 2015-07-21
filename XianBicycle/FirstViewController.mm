@@ -33,7 +33,7 @@
                                      style:UIBarButtonItemStylePlain target:self action:@selector(searchCurrentLocation)];
     
     self.navigationItem.rightBarButtonItem = item;
-    self.navigationItem.title = NSLocalizedString(@"tab_result", nil);
+    self.navigationItem.title = NSLocalizedString(@"tab_nearby", nil);
 }
 
 - (void)viewWillAppear:(BOOL)animated

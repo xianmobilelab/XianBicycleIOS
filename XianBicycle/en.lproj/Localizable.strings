@@ -12,8 +12,8 @@
 "msg_error" = "Error";
 "msg_location" = "Location successful";
 
-"tab_search" = "Nearby";
-"tab_result" = "Search";
+"tab_nearby" = "Nearby";
+"tab_search" = "Search";
 
 "msg_network_failed" = "Network failed, please check your network and try it later.";
 "msg_location_failed" = "Location failed, it is can not get location now.";
