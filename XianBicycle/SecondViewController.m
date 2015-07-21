@@ -36,8 +36,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    _searcher = [[BMKSuggestionSearch alloc] init];
-    _searcher.delegate = self;
+    [self initBaiduMapSDK];
     // Do any additional setup after loading the view, typically from a nib.
     self.navigationItem.title = NSLocalizedString(@"tab_search", nil);
 }
@@ -56,9 +55,18 @@
     NSLog(@"start :%@", _startTextField.text);
     NSLog(@"end :%@", _endTextField.text);
     [self searchByKeyWord:_startTextField.text];
+    [self getGeoByKeyWord:_endTextField.text];
 }
 
 #pragma mark - private methods
+- (void)initBaiduMapSDK
+{
+    _searcher = [[BMKSuggestionSearch alloc] init];
+    _searcher.delegate = self;
+    _geoSearcher = [[BMKGeoCodeSearch alloc] init];
+    _geoSearcher.delegate = self;
+}
+
 - (void)searchByKeyWord:(NSString *)keyword
 {
     if ([NSString isBlankString:keyword]) {
@@ -68,13 +76,23 @@
     option.cityname = @"西安市";
     option.keyword = keyword;
     BOOL flag = [_searcher suggestionSearch:option];
-    if(flag)
-    {
+    if(flag) {
         NSLog(@"建议检索发送成功");
-    }
-    else
-    {
+    } else {
         NSLog(@"建议检索发送失败");
+    }
+}
+
+- (void)getGeoByKeyWord:(NSString *)keyword
+{
+    BMKGeoCodeSearchOption *geoCodeSearchOption = [[BMKGeoCodeSearchOption alloc]init];
+    geoCodeSearchOption.city= @"西安市";
+    geoCodeSearchOption.address = keyword;
+    BOOL flag = [_geoSearcher geoCode:geoCodeSearchOption];
+    if(flag) {
+        NSLog(@"geo检索发送成功");
+    } else {
+        NSLog(@"geo检索发送失败");
     }
 }
 
@@ -110,6 +128,41 @@
         [_suggestionResult.districtList removeAllObjects];
         [_suggestionResult.ptList removeAllObjects];
     }
+}
+
+#pragma mark - BMKGeoCodeSearchDelegate
+- (void)onGetGeoCodeResult:(BMKGeoCodeSearch *)searcher result:(BMKGeoCodeResult *)result errorCode:(BMKSearchErrorCode)error
+{
+    if (error == BMK_SEARCH_NO_ERROR) {
+        //在此处理正常结果
+        NSLog(@"%@, %f, %f", result.address, result.location.latitude, result.location.longitude);
+    } else {
+        NSLog(@"抱歉，未找到结果");
+    }
+}
+
+#pragma mark - MLPAutoCompleteTextFieldDelegate
+- (BOOL)autoCompleteTextField:(MLPAutoCompleteTextField *)textField
+          shouldConfigureCell:(UITableViewCell *)cell
+       withAutoCompleteString:(NSString *)autocompleteString
+         withAttributedString:(NSAttributedString *)boldedString
+        forAutoCompleteObject:(id<MLPAutoCompletionObject>)autocompleteObject
+            forRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    return true;
+}
+
+
+/*IndexPath corresponds to the order of strings within the autocomplete table,
+ not the original data source.
+ autoCompleteObject may be nil if the selectedString had no object associated with it.
+ */
+- (void)autoCompleteTextField:(MLPAutoCompleteTextField *)textField
+  didSelectAutoCompleteString:(NSString *)selectedString
+       withAutoCompleteObject:(id<MLPAutoCompletionObject>)selectedObject
+            forRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    
 }
 
 @end

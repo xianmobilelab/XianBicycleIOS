@@ -165,11 +165,6 @@
 {
     [self showLocationSuccessfulToast];
     [_mapView updateLocationData:userLocation];
-//    //设置定位精确度，默认：kCLLocationAccuracyBest
-//    [BMKLocationServicesetLocationDesiredAccuracy:kCLLocationAccuracyNearestTenMeters];
-//    //指定最小距离更新(米)，默认：kCLDistanceFilterNone
-//    [BMKLocationServicesetLocationDistanceFilter:100.f];
-    [_mapView setCenterCoordinate:userLocation.location.coordinate];
     NSLog(@"didUpdateUserLocation lat %f,long %f",userLocation.location.coordinate.latitude,userLocation.location.coordinate.longitude);
     _loc = userLocation.location.coordinate;
     [_locService stopUserLocationService];

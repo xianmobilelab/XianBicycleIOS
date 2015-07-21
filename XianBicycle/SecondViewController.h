@@ -8,6 +8,7 @@
 
 #import <UIKit/UIKit.h>
 #import <BaiduMapAPI/BMapKit.h>
+#import "MLPAutoCompleteTextFieldDelegate.h"
 
 @interface BicycleSuggestionResult : NSObject
 
@@ -22,8 +23,9 @@
 
 @end
 
-@interface SecondViewController : UIViewController <BMKSuggestionSearchDelegate> {
+@interface SecondViewController : UIViewController <BMKSuggestionSearchDelegate, BMKGeoCodeSearchDelegate, MLPAutoCompleteTextFieldDelegate> {
     BMKSuggestionSearch *_searcher;
+    BMKGeoCodeSearch *_geoSearcher;
     BicycleSuggestionResult *_suggestionResult;
 }
 
