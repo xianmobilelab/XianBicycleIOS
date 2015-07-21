@@ -12,8 +12,8 @@
 "msg_error" = "出错啦";
 "msg_location" = "定位成功";
 
-"tab_search" = "搜索";
-"tab_result" = "结果";
+"tab_search" = "附近";
+"tab_result" = "搜索";
 
 "msg_network_failed" = "网络异常，请检查网络设置后再次尝试。";
 "msg_location_failed" = "获取位置失败。";

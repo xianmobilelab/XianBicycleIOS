@@ -36,11 +36,11 @@ NSString *const RESPONSE_BICYCLE_SET_LOCKNUM_KEY    = @"locknum";
             item.siteid = itemObject[RESPONSE_BICYCLE_SET_SITEID_KEY];
             item.sitename = itemObject[RESPONSE_BICYCLE_SET_SITENAME_KEY];
             item.location = itemObject[RESPONSE_BICYCLE_SET_LOCATION_KEY];
-            item.latitude = itemObject[RESPONSE_BICYCLE_SET_LATITUDE_KEY];
-            item.longitude = itemObject[RESPONSE_BICYCLE_SET_LONGITUDE_KEY];
-            item.distance = itemObject[RESPONSE_BICYCLE_SET_DISTANCE_KEY];
-            item.emptynum = itemObject[RESPONSE_BICYCLE_SET_EMPTYNUM_KEY];
-            item.locknum = itemObject[RESPONSE_BICYCLE_SET_LOCKNUM_KEY];
+            item.latitude = [(NSNumber *)itemObject[RESPONSE_BICYCLE_SET_LATITUDE_KEY] doubleValue];
+            item.longitude = [(NSNumber *)itemObject[RESPONSE_BICYCLE_SET_LONGITUDE_KEY] doubleValue];
+            item.distance = [(NSNumber *)itemObject[RESPONSE_BICYCLE_SET_DISTANCE_KEY] doubleValue];
+            item.emptynum = [(NSNumber *)itemObject[RESPONSE_BICYCLE_SET_EMPTYNUM_KEY] integerValue];
+            item.locknum = [(NSNumber *)itemObject[RESPONSE_BICYCLE_SET_LOCKNUM_KEY] integerValue];
             [itemObjectList addObject:item];
         }
         bicycleSet.siteList = [itemObjectList copy];

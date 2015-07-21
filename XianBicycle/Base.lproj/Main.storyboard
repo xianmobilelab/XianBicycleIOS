@@ -112,11 +112,11 @@
             </objects>
             <point key="canvasLocation" x="0.0" y="0.0"/>
         </scene>
-        <!--First-->
+        <!--Nearby-->
         <scene sceneID="GVZ-gO-p9Z">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="mD4-PE-Dut" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="First" image="first" id="acW-dT-cKf"/>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="mD4-PE-Dut" userLabel="Nearby" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Nearby" image="first" id="acW-dT-cKf" userLabel="Nearby"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="h9B-RM-JoV">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
@@ -131,11 +131,11 @@
             </objects>
             <point key="canvasLocation" x="750" y="-320"/>
         </scene>
-        <!--123-->
+        <!--Search-->
         <scene sceneID="1XC-Zq-XEp">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="4r8-VQ-mLF" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="123" image="second" id="cPa-gy-q4n"/>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="4r8-VQ-mLF" userLabel="Search" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Search" image="second" id="cPa-gy-q4n" userLabel="Search"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="rCs-p0-lRr">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>

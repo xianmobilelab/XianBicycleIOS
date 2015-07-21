@@ -104,8 +104,8 @@
     NSLog(@"%@, %@", item.sitename, item.location);
     BMKPointAnnotation* annotation = [[BMKPointAnnotation alloc]init];
     CLLocationCoordinate2D coor;
-    coor.latitude = [item.latitude doubleValue];
-    coor.longitude = [item.longitude doubleValue];
+    coor.latitude = item.latitude;
+    coor.longitude = item.longitude;
     annotation.coordinate = coor;
     annotation.title =  item.sitename;
     [_mapView addAnnotation:annotation];
