@@ -10,7 +10,7 @@
 
 @implementation BaseResponse
 
--(id) getJSONResponse: (id)jsonObject
++(instancetype) getJSONResponse: (id)jsonObject
 {
     [self doesNotRecognizeSelector:_cmd];
     return nil;

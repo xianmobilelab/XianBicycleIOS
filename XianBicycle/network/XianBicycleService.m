@@ -26,21 +26,16 @@
 - (void)doSearch: (BaseRequest *) param withDelegate: (id)delegate
 {
     NSString *request = [[param getJSONRequest] stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
-    NSString *requestAPI = SEARCH_API;
-    NSRange range = [requestAPI rangeOfString:SEARCH_QUERY];
-    requestAPI = [requestAPI stringByReplacingCharactersInRange:range withString:request];
+    NSString *requestAPI = [NSString stringWithFormat:SEARCH_API, request];
     NSLog(@"Search API: %@", requestAPI);
     
     AFHTTPRequestOperationManager *manager = [AFHTTPRequestOperationManager manager];
     manager.responseSerializer.acceptableContentTypes = [manager.responseSerializer.acceptableContentTypes setByAddingObject:@"text/html"];
 
     [manager GET:requestAPI parameters:nil success:^(AFHTTPRequestOperation *operation, id responseObject) {
-//        NSLog(@"JSON: %@", responseObject);
-        ResponseBicycleSet *response = [[ResponseBicycleSet alloc] init];
-        response = [response getJSONResponse:responseObject];
+        ResponseBicycleSet *response = [ResponseBicycleSet getJSONResponse:responseObject];
         [delegate getDecodedData:response withCode:NetworkCodeNoError];
     } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
-        NSLog(@"Error: %@", error);
         [delegate getDecodedData:error withCode:NetworkCodeUnknown];
     }];
 }

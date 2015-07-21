@@ -23,11 +23,7 @@
 
 @end
 
-@interface SecondViewController : UIViewController <BMKSuggestionSearchDelegate, BMKGeoCodeSearchDelegate, MLPAutoCompleteTextFieldDelegate> {
-    BMKSuggestionSearch *_searcher;
-    BMKGeoCodeSearch *_geoSearcher;
-    BicycleSuggestionResult *_suggestionResult;
-}
+@interface SecondViewController : UIViewController <BMKSuggestionSearchDelegate, BMKGeoCodeSearchDelegate, MLPAutoCompleteTextFieldDelegate> 
 
 @property (weak, nonatomic) IBOutlet UITextField *endTextField;
 @property (weak, nonatomic) IBOutlet UITextField *startTextField;

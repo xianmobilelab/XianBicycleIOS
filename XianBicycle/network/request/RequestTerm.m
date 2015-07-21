@@ -12,14 +12,12 @@ NSString *const REQUEST_TERM_KEY = @"term";
 
 @implementation RequestTerm
 
-@synthesize term;
-
 - (NSString *) getJSONRequest
 {
     NSString *jsonString = nil;
     @try {
         NSMutableDictionary *jsonDict = [NSMutableDictionary dictionaryWithCapacity:1];
-        [jsonDict setObject:self.term forKey:REQUEST_TERM_KEY];
+        [jsonDict setObject:_term forKey:REQUEST_TERM_KEY];
         jsonString = [NSString jsonStringWithObject:jsonDict];
         NSLog(@"RequestTerm JSON string: %@", jsonString);
     }

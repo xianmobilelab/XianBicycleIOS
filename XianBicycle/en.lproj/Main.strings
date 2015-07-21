@@ -1,0 +1,18 @@
+
+/* Class = "UITextField"; placeholder = "请输入终点"; ObjectID = "Jja-Qq-2uw"; */
+"Jja-Qq-2uw.placeholder" = "请输入终点";
+
+/* Class = "UITextField"; placeholder = "请输入起点"; ObjectID = "Si3-PP-oXr"; */
+"Si3-PP-oXr.placeholder" = "请输入起点";
+
+/* Class = "UILabel"; text = "查询条件"; ObjectID = "Thf-6z-QWk"; */
+"Thf-6z-QWk.text" = "查询条件";
+
+/* Class = "UITabBarItem"; title = "First"; ObjectID = "acW-dT-cKf"; */
+"acW-dT-cKf.title" = "First";
+
+/* Class = "UITabBarItem"; title = "123"; ObjectID = "cPa-gy-q4n"; */
+"cPa-gy-q4n.title" = "123";
+
+/* Class = "UIButton"; normalTitle = "搜索"; ObjectID = "r3w-PU-WlG"; */
+"r3w-PU-WlG.normalTitle" = "搜索";

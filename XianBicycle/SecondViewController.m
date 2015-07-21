@@ -8,9 +8,14 @@
 
 #import "SecondViewController.h"
 #import "NSString+NSStringUtils.h"
+#import "XianBicycleConfig.h"
 
 
 @interface SecondViewController ()
+
+@property(nonatomic) BMKSuggestionSearch *suggestSearcher;
+@property(nonatomic) BMKGeoCodeSearch *geoSearcher;
+@property(nonatomic) BicycleSuggestionResult *suggestionResult;
 
 @end
 
@@ -48,7 +53,8 @@
 
 - (void)viewWillDisappear:(BOOL)animated
 {
-    _searcher.delegate = nil;
+    _suggestSearcher.delegate = nil;
+    _geoSearcher.delegate = nil;
 }
 
 - (IBAction)doSearch:(id)sender {
@@ -61,8 +67,8 @@
 #pragma mark - private methods
 - (void)initBaiduMapSDK
 {
-    _searcher = [[BMKSuggestionSearch alloc] init];
-    _searcher.delegate = self;
+    _suggestSearcher = [[BMKSuggestionSearch alloc] init];
+    _suggestSearcher.delegate = self;
     _geoSearcher = [[BMKGeoCodeSearch alloc] init];
     _geoSearcher.delegate = self;
 }
@@ -73,9 +79,9 @@
         return;
     }
     BMKSuggestionSearchOption *option = [[BMKSuggestionSearchOption alloc] init];
-    option.cityname = @"西安市";
+    option.cityname = DEFAULT_CITY;
     option.keyword = keyword;
-    BOOL flag = [_searcher suggestionSearch:option];
+    BOOL flag = [_suggestSearcher suggestionSearch:option];
     if(flag) {
         NSLog(@"建议检索发送成功");
     } else {
@@ -86,7 +92,7 @@
 - (void)getGeoByKeyWord:(NSString *)keyword
 {
     BMKGeoCodeSearchOption *geoCodeSearchOption = [[BMKGeoCodeSearchOption alloc]init];
-    geoCodeSearchOption.city= @"西安市";
+    geoCodeSearchOption.city= DEFAULT_CITY;
     geoCodeSearchOption.address = keyword;
     BOOL flag = [_geoSearcher geoCode:geoCodeSearchOption];
     if(flag) {
@@ -112,7 +118,7 @@
         _suggestionResult = nil;
         _suggestionResult = [[BicycleSuggestionResult alloc] initWithCapacity:[result.keyList count]];
         for (int i = 0; i < [result.keyList count]; i++) {
-            if ([result.cityList[i] isEqualToString:@"西安市"]) {
+            if ([result.cityList[i] isEqualToString:DEFAULT_CITY]) {
                 [_suggestionResult.keyList addObject:result.keyList[i]];
                 [_suggestionResult.districtList addObject:result.districtList[i]];
                 [_suggestionResult.ptList addObject:result.ptList[i]];

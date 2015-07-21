@@ -14,11 +14,13 @@
 
 @interface FirstViewController ()
 
+@property (nonatomic) BMKMapView *mapView;
+@property (nonatomic) BMKLocationService *locService;
+@property (nonatomic) CLLocationCoordinate2D loc;
+
 @end
 
 @implementation FirstViewController
-
-@synthesize _service;
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -62,9 +64,8 @@
     [_mapView setZoomLevel:ZOOM_LEVEL];
     [self.view insertSubview:_mapView atIndex:1];
 #if TARGET_IPHONE_SIMULATOR
-    CLLocationCoordinate2D loc = {DEFAULT_LAT, DEFAULT_LONG};
-    _loc = loc;
-    [_mapView setCenterCoordinate:loc];
+    _loc = {DEFAULT_LAT, DEFAULT_LONG};
+    [_mapView setCenterCoordinate:_loc];
 #endif
 }
 

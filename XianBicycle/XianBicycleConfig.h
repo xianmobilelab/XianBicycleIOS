@@ -23,4 +23,6 @@
 #define DEFAULT_LAT  34.195
 #define DEFAULT_LONG 108.883
 
+#define DEFAULT_CITY @"西安市"
+
 #endif

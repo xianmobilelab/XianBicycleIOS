@@ -10,12 +10,12 @@
 
 @interface BicycleSetItem : NSObject
 
-@property(nonatomic, retain) NSNumber *distance;
-@property(nonatomic, retain) NSNumber *latitude;
-@property(nonatomic, retain) NSNumber *longitude;
-@property(nonatomic, retain) NSNumber *emptynum;
-@property(nonatomic, retain) NSNumber *locknum;
-@property(nonatomic, retain) NSNumber *siteid;
+@property(nonatomic) NSNumber *distance;
+@property(nonatomic) NSNumber *latitude;
+@property(nonatomic) NSNumber *longitude;
+@property(nonatomic) NSNumber *emptynum;
+@property(nonatomic) NSNumber *locknum;
+@property(nonatomic) NSNumber *siteid;
 @property(nonatomic, copy) NSString *sitename;
 @property(nonatomic, copy) NSString *location;
 

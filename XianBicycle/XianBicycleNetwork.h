@@ -19,7 +19,6 @@
  *
  ***************************************************/
 
-#define SEARCH_API          @"http://xian-pub-bicycle.herokuapp.com/api?query={query}"
-#define SEARCH_QUERY        @"{query}"
+#define SEARCH_API          @"http://xian-pub-bicycle.herokuapp.com/api?query=%@"
 
 #endif

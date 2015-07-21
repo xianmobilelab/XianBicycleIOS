@@ -10,7 +10,6 @@
 
 @protocol XianBicycleServiceProtocol <NSObject>
 
-
 enum
 {
     NetworkCodeNoError,
@@ -23,6 +22,6 @@ enum
  * @param data :  decoded resutl object data(need at a cast)
  * @param code : result code, 0 is success, others is error
  **/
-- (void)getDecodedData:(id)data withCode:(long)code;
+- (void)getDecodedData:(id)data withCode:(NSInteger)code;
 
 @end

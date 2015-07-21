@@ -19,40 +19,32 @@ NSString *const RESPONSE_BICYCLE_SET_LOCKNUM_KEY    = @"locknum";
 
 @implementation BicycleSetItem
 
-@synthesize siteid;
-@synthesize sitename;
-@synthesize location;
-@synthesize distance;
-@synthesize latitude;
-@synthesize longitude;
-@synthesize emptynum;
-@synthesize locknum;
-
 @end
 
 @implementation ResponseBicycleSet
 
 @synthesize siteList;
 
--(id) getJSONResponse: (id)jsonObject {
++(instancetype) getJSONResponse: (id)jsonObject {
+    ResponseBicycleSet *bicycleSet = [[ResponseBicycleSet alloc] init];
     if ([jsonObject isKindOfClass:[NSArray class]]) {
         NSArray *list = jsonObject;
         NSMutableArray *itemObjectList = [[NSMutableArray alloc] initWithCapacity:[list count]];
         for (int i = 0; i < [list count]; i++) {
             id itemObject = [list objectAtIndex:i];
             BicycleSetItem *item = [[BicycleSetItem alloc] init];
-            item.siteid = [itemObject objectForKey:RESPONSE_BICYCLE_SET_SITEID_KEY];
-            item.sitename = [itemObject objectForKey:RESPONSE_BICYCLE_SET_SITENAME_KEY];
-            item.location = [itemObject objectForKey:RESPONSE_BICYCLE_SET_LOCATION_KEY];
-            item.latitude = [itemObject objectForKey:RESPONSE_BICYCLE_SET_LATITUDE_KEY];
-            item.longitude = [itemObject objectForKey:RESPONSE_BICYCLE_SET_LONGITUDE_KEY];
-            item.distance = [itemObject objectForKey:RESPONSE_BICYCLE_SET_DISTANCE_KEY];
-            item.emptynum = [itemObject objectForKey:RESPONSE_BICYCLE_SET_EMPTYNUM_KEY];
-            item.locknum = [itemObject objectForKey:RESPONSE_BICYCLE_SET_LOCKNUM_KEY];
+            item.siteid = itemObject[RESPONSE_BICYCLE_SET_SITEID_KEY];
+            item.sitename = itemObject[RESPONSE_BICYCLE_SET_SITENAME_KEY];
+            item.location = itemObject[RESPONSE_BICYCLE_SET_LOCATION_KEY];
+            item.latitude = itemObject[RESPONSE_BICYCLE_SET_LATITUDE_KEY];
+            item.longitude = itemObject[RESPONSE_BICYCLE_SET_LONGITUDE_KEY];
+            item.distance = itemObject[RESPONSE_BICYCLE_SET_DISTANCE_KEY];
+            item.emptynum = itemObject[RESPONSE_BICYCLE_SET_EMPTYNUM_KEY];
+            item.locknum = itemObject[RESPONSE_BICYCLE_SET_LOCKNUM_KEY];
             [itemObjectList addObject:item];
         }
-        self.siteList = [itemObjectList copy];
-        return self;
+        bicycleSet.siteList = [itemObjectList copy];
+        return bicycleSet;
     }
     return nil;
 }

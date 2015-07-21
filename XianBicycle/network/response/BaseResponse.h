@@ -10,6 +10,6 @@
 
 @interface BaseResponse : NSObject
 
--(id) getJSONResponse: (id)jsonObject;
++(instancetype) getJSONResponse: (id)jsonObject;
 
 @end

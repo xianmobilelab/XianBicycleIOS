@@ -18,6 +18,6 @@
 
 @interface CommonUtils : NSObject
 
-- (UIColor *)createUIColorFromRGBA:(long)rgbValue withAlpha:(CGFloat) alphaValue;
++ (UIColor *)createUIColorFromRGBA:(NSInteger)rgbValue withAlpha:(CGFloat) alphaValue;
 
 @end

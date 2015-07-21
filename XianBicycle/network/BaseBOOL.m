@@ -10,19 +10,17 @@
 
 @implementation BaseBOOL
 
-@synthesize boolValue;
-
 - (id)initWithBOOL: (BOOL)value
 {
     if (self = [super init]) {
-        boolValue = value;
+        _boolValue = value;
     }
     return self;
 }
 
 - (NSString *)getBOOLJSONValue
 {
-    if (boolValue) {
+    if (_boolValue) {
         return @"true";
     } else {
         return @"false";
