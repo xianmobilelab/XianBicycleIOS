@@ -25,7 +25,7 @@
 @synthesize districtList;
 @synthesize ptList;
 
--(id)initWithCapacity:(NSUInteger) capacity
+-(instancetype)initWithCapacity:(NSUInteger) capacity
 {
     if (self = [super init]) {
         self.keyList = [[NSMutableArray alloc] initWithCapacity:capacity];

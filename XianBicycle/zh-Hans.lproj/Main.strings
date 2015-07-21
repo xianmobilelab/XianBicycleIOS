@@ -1,12 +1,21 @@
 
-/* Class = "UILabel"; text = "Loaded by SecondViewController"; ObjectID = "NDk-cv-Gan"; */
-"NDk-cv-Gan.text" = "Loaded by SecondViewController";
+/* Class = "UITextField"; placeholder = "请输入终点"; ObjectID = "Jja-Qq-2uw"; */
+"Jja-Qq-2uw.placeholder" = "请输入终点";
 
-/* Class = "UITabBarItem"; title = "First"; ObjectID = "acW-dT-cKf"; */
+/* Class = "UITextField"; placeholder = "请输入起点"; ObjectID = "Si3-PP-oXr"; */
+"Si3-PP-oXr.placeholder" = "请输入起点";
+
+/* Class = "UILabel"; text = "查询条件"; ObjectID = "Thf-6z-QWk"; */
+"Thf-6z-QWk.text" = "查询条件";
+
+/* Class = "UITabBarItem"; title = "Nearby"; ObjectID = "acW-dT-cKf"; */
 "acW-dT-cKf.title" = "附近";
 
-/* Class = "UITabBarItem"; title = "Second"; ObjectID = "cPa-gy-q4n"; */
+/* Class = "UITabBarItem"; title = "Search"; ObjectID = "cPa-gy-q4n"; */
 "cPa-gy-q4n.title" = "搜索";
 
-/* Class = "UILabel"; text = "Second View"; ObjectID = "zEq-FU-wV5"; */
-"zEq-FU-wV5.text" = "Second View";
+/* Class = "UIButton"; normalTitle = "Search"; ObjectID = "mUI-wx-VSx"; */
+"mUI-wx-VSx.normalTitle" = "搜索";
+
+/* Class = "UIButton"; normalTitle = "搜索"; ObjectID = "r3w-PU-WlG"; */
+"r3w-PU-WlG.normalTitle" = "搜索";

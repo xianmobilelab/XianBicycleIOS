@@ -19,7 +19,7 @@
 ///pt列表，成员是：封装成NSValue的CLLocationCoordinate2D
 @property (nonatomic, strong) NSMutableArray* ptList;
 
--(id)initWithCapacity:(NSUInteger) capacity;
+-(instancetype)initWithCapacity:(NSUInteger) capacity;
 
 @end
 

@@ -56,7 +56,6 @@
 		103841661B54DD26001F9762 /* ResponseBicycleSet.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ResponseBicycleSet.m; sourceTree = "<group>"; };
 		105355531B5516EE0064A0D2 /* BaseBOOL.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = BaseBOOL.h; path = ../BaseBOOL.h; sourceTree = "<group>"; };
 		105355541B5516EE0064A0D2 /* BaseBOOL.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = BaseBOOL.m; path = ../BaseBOOL.m; sourceTree = "<group>"; };
-		1069AE7B1B5B81D600341DCA /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/Main.strings"; sourceTree = "<group>"; };
 		1069AE7C1B5B81D600341DCA /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/LaunchScreen.strings"; sourceTree = "<group>"; };
 		1069AE801B5B834A00341DCA /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		1069AE821B5B834B00341DCA /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/Localizable.strings"; sourceTree = "<group>"; };
@@ -64,6 +63,7 @@
 		1069AE871B5B927000341DCA /* CommonUtils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CommonUtils.m; sourceTree = "<group>"; };
 		1069AE891B5C02F100341DCA /* NSString+NSStringUtils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+NSStringUtils.h"; sourceTree = "<group>"; };
 		1069AE8A1B5C02F100341DCA /* NSString+NSStringUtils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+NSStringUtils.m"; sourceTree = "<group>"; };
+		10904CD21B5EA81F00609585 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/Main.strings"; sourceTree = "<group>"; };
 		10D5B5FE1B50EE1B000D723F /* XianBicycle.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = XianBicycle.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		10D5B6021B50EE1B000D723F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		10D5B6031B50EE1B000D723F /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -485,7 +485,7 @@
 			isa = PBXVariantGroup;
 			children = (
 				10D5B60F1B50EE1B000D723F /* Base */,
-				1069AE7B1B5B81D600341DCA /* zh-Hans */,
+				10904CD21B5EA81F00609585 /* zh-Hans */,
 			);
 			name = Main.storyboard;
 			sourceTree = "<group>";

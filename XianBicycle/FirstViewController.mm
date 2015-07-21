@@ -62,7 +62,7 @@
         _mapView = [[BMKMapView alloc] initWithFrame:CGRectMake(0, 0, XIANBICYCLE_SCREEN_WIDTH, XIANBICYCLE_SCREEN_HEIGHT)];
     }
     [_mapView setZoomLevel:ZOOM_LEVEL];
-    [self.view insertSubview:_mapView atIndex:1];
+    [self.view insertSubview:_mapView atIndex:0];
 #if TARGET_IPHONE_SIMULATOR
     _loc = {DEFAULT_LAT, DEFAULT_LONG};
     [_mapView setCenterCoordinate:_loc];
@@ -186,4 +186,7 @@
     [self showErrorAlertView:title withMessage:message];
 }
 
+- (IBAction)search:(id)sender {
+    [self searchCurrentLocation];
+}
 @end

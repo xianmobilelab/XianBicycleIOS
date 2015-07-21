@@ -14,5 +14,7 @@
 
 @property (nonatomic) XianBicycleService *service;
 
+- (IBAction)search:(id)sender;
+
 @end
 
