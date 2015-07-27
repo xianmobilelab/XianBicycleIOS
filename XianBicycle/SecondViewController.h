@@ -8,14 +8,13 @@
 
 #import <UIKit/UIKit.h>
 #import <BaiduMapAPI/BMapKit.h>
+#import "MLPAutoCompleteTextField.h"
 #import "MLPAutoCompleteTextFieldDelegate.h"
 
 @interface BicycleSuggestionResult : NSObject
 
 ///key列表，成员是NSString
-@property (nonatomic, strong) NSMutableArray* keyList;
-///district列表，成员是NSString
-@property (nonatomic, strong) NSMutableArray* districtList;
+@property (nonatomic, strong) NSMutableArray* locationList;
 ///pt列表，成员是：封装成NSValue的CLLocationCoordinate2D
 @property (nonatomic, strong) NSMutableArray* ptList;
 
@@ -23,13 +22,15 @@
 
 @end
 
-@interface SecondViewController : UIViewController <BMKSuggestionSearchDelegate, BMKGeoCodeSearchDelegate, MLPAutoCompleteTextFieldDelegate> 
+@interface SecondViewController : UIViewController <BMKSuggestionSearchDelegate, BMKGeoCodeSearchDelegate, UITextFieldDelegate, MLPAutoCompleteTextFieldDelegate, MLPAutoCompleteTextFieldDataSource>
 
-@property (weak, nonatomic) IBOutlet UITextField *endTextField;
-@property (weak, nonatomic) IBOutlet UITextField *startTextField;
+@property (weak, nonatomic) IBOutlet MLPAutoCompleteTextField *startTextField;
+@property (weak, nonatomic) IBOutlet MLPAutoCompleteTextField *endTextField;
+
+@property (nonatomic) CLLocation *startLoc;
+@property (nonatomic) CLLocation *endLoc;
 
 - (IBAction)doSearch:(id)sender;
-
 
 @end
 

@@ -14,4 +14,6 @@
 
 @property(nonatomic, copy) NSString *term;
 
+-(instancetype)initWithTerm:(NSString *) term;
+
 @end

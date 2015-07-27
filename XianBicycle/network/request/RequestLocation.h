@@ -16,4 +16,7 @@
 @property(nonatomic) NSNumber *lng;
 @property(nonatomic) NSNumber *distance;
 
+-(instancetype)initWithLatitude:(double) lat Longtitude:(double) lon;
+-(instancetype)initWithLatitude:(double) lat Longtitude:(double) lon Distance:(double) distance;
+
 @end

@@ -32,4 +32,24 @@ NSString *const REQUEST_LOCATION_DISTANCE_KEY   = @"distance";
     return jsonString;
 }
 
+-(instancetype)initWithLatitude:(double) lat Longtitude:(double) lon
+{
+    if (self = [super init]) {
+        _lat = [[NSNumber alloc] initWithDouble:lat];
+        _lng = [[NSNumber alloc] initWithDouble:lon];
+        _distance = [[NSNumber alloc] initWithDouble:1000.0];
+    }
+    return self;
+}
+
+-(instancetype)initWithLatitude:(double) lat Longtitude:(double) lon Distance:(double) distance
+{
+    if (self = [super init]) {
+        _lat = [[NSNumber alloc] initWithDouble:lat];
+        _lng = [[NSNumber alloc] initWithDouble:lon];
+        _distance = [[NSNumber alloc] initWithDouble:distance];
+    }
+    return self;
+}
+
 @end

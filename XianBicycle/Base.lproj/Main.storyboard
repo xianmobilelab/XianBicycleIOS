@@ -57,7 +57,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="请输入起点" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Si3-PP-oXr">
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="请输入起点" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Si3-PP-oXr" customClass="MLPAutoCompleteTextField">
                                 <rect key="frame" x="16" y="115" width="568" height="30"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
@@ -68,7 +68,7 @@
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="请输入终点" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Jja-Qq-2uw">
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="请输入终点" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Jja-Qq-2uw" customClass="MLPAutoCompleteTextField">
                                 <rect key="frame" x="16" y="157" width="568" height="30"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
@@ -108,8 +108,8 @@
                     </view>
                     <navigationItem key="navigationItem" id="dTs-xd-h8i"/>
                     <connections>
-                        <outlet property="endTextField" destination="Jja-Qq-2uw" id="6BU-im-MQL"/>
-                        <outlet property="startTextField" destination="Si3-PP-oXr" id="nQ3-n1-h6O"/>
+                        <outlet property="endTextField" destination="Jja-Qq-2uw" id="mQx-hN-38i"/>
+                        <outlet property="startTextField" destination="Si3-PP-oXr" id="9rG-oL-UNu"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4Nw-L8-lE0" sceneMemberID="firstResponder"/>

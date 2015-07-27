@@ -27,4 +27,12 @@ NSString *const REQUEST_TERM_KEY = @"term";
     return jsonString;
 }
 
+-(instancetype)initWithTerm:(NSString *) term
+{
+    if (self = [super init]) {
+        _term = [[NSString alloc] initWithString:term];
+    }
+    return self;
+}
+
 @end

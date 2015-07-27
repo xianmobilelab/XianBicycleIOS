@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		10197E881B64ADAF0020788A /* BicycleLocation.m in Sources */ = {isa = PBXBuildFile; fileRef = 10197E871B64ADAF0020788A /* BicycleLocation.m */; };
 		103841641B54DCBA001F9762 /* BaseResponse.m in Sources */ = {isa = PBXBuildFile; fileRef = 103841631B54DCBA001F9762 /* BaseResponse.m */; };
 		103841671B54DD26001F9762 /* ResponseBicycleSet.m in Sources */ = {isa = PBXBuildFile; fileRef = 103841661B54DD26001F9762 /* ResponseBicycleSet.m */; };
 		105355551B5516EE0064A0D2 /* BaseBOOL.m in Sources */ = {isa = PBXBuildFile; fileRef = 105355541B5516EE0064A0D2 /* BaseBOOL.m */; };
@@ -49,6 +50,8 @@
 
 /* Begin PBXFileReference section */
 		0D1954950CADA627EE01B30A /* libPods-XianBicycle.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-XianBicycle.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		10197E861B64ADAF0020788A /* BicycleLocation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BicycleLocation.h; sourceTree = "<group>"; };
+		10197E871B64ADAF0020788A /* BicycleLocation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BicycleLocation.m; sourceTree = "<group>"; };
 		1038415F1B54D2DD001F9762 /* XianBicycleServiceProtocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XianBicycleServiceProtocol.h; sourceTree = "<group>"; };
 		103841621B54DCBA001F9762 /* BaseResponse.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BaseResponse.h; sourceTree = "<group>"; };
 		103841631B54DCBA001F9762 /* BaseResponse.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BaseResponse.m; sourceTree = "<group>"; };
@@ -144,6 +147,15 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		10197E851B64AD6F0020788A /* model */ = {
+			isa = PBXGroup;
+			children = (
+				10197E861B64ADAF0020788A /* BicycleLocation.h */,
+				10197E871B64ADAF0020788A /* BicycleLocation.m */,
+			);
+			path = model;
+			sourceTree = "<group>";
+		};
 		1069AE851B5B924000341DCA /* utils */ = {
 			isa = PBXGroup;
 			children = (
@@ -177,6 +189,7 @@
 		10D5B6001B50EE1B000D723F /* XianBicycle */ = {
 			isa = PBXGroup;
 			children = (
+				10197E851B64AD6F0020788A /* model */,
 				1069AE851B5B924000341DCA /* utils */,
 				10F7391C1B5213DB00DBD388 /* network */,
 				10F739191B52011000DBD388 /* common */,
@@ -445,6 +458,7 @@
 				10D5B6071B50EE1B000D723F /* AppDelegate.m in Sources */,
 				10F7390C1B51FDF600DBD388 /* FirstViewController.mm in Sources */,
 				10F739271B52159A00DBD388 /* RequestLocation.m in Sources */,
+				10197E881B64ADAF0020788A /* BicycleLocation.m in Sources */,
 				105355551B5516EE0064A0D2 /* BaseBOOL.m in Sources */,
 				10F739241B52152600DBD388 /* BaseRequest.m in Sources */,
 				10D5B6041B50EE1B000D723F /* main.m in Sources */,

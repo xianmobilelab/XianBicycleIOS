@@ -21,16 +21,11 @@
 
 @implementation BicycleSuggestionResult
 
-@synthesize keyList;
-@synthesize districtList;
-@synthesize ptList;
-
 -(instancetype)initWithCapacity:(NSUInteger) capacity
 {
     if (self = [super init]) {
-        self.keyList = [[NSMutableArray alloc] initWithCapacity:capacity];
-        self.districtList = [[NSMutableArray alloc] initWithCapacity:capacity];
-        self.ptList = [[NSMutableArray alloc] initWithCapacity:capacity];
+        _locationList = [[NSMutableArray alloc] initWithCapacity:capacity];
+        _ptList = [[NSMutableArray alloc] initWithCapacity:capacity];
     }
     return self;
 }
@@ -42,6 +37,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     [self initBaiduMapSDK];
+    [self setAutoCompleteTextFieldType];
     // Do any additional setup after loading the view, typically from a nib.
     self.navigationItem.title = NSLocalizedString(@"tab_search", nil);
 }
@@ -58,10 +54,7 @@
 }
 
 - (IBAction)doSearch:(id)sender {
-    NSLog(@"start :%@", _startTextField.text);
-    NSLog(@"end :%@", _endTextField.text);
-    [self searchByKeyWord:_startTextField.text];
-    [self getGeoByKeyWord:_endTextField.text];
+    NSLog(@"doSearch");
 }
 
 #pragma mark - private methods
@@ -104,11 +97,17 @@
 
 - (void)displaySuggestionResult
 {
-    for(int i = 0; i < [_suggestionResult.keyList count];i++) {
+    for(int i = 0; i < [_suggestionResult.locationList count];i++) {
         CLLocationCoordinate2D coordinate;
         [[_suggestionResult.ptList objectAtIndex: i]getValue:&coordinate];
-        NSLog(@"%@ - %@, %f, %f", _suggestionResult.keyList[i], _suggestionResult.districtList[i], coordinate.latitude, coordinate.longitude);
+        NSLog(@"%@, %f, %f", _suggestionResult.locationList[i], coordinate.latitude, coordinate.longitude);
     }
+}
+
+- (BOOL)textFieldShouldReturn:(UITextField *)textField
+{
+    [textField resignFirstResponder];
+    return YES;
 }
 
 #pragma mark - BMKSuggestionSearchDelegate
@@ -119,8 +118,7 @@
         _suggestionResult = [[BicycleSuggestionResult alloc] initWithCapacity:[result.keyList count]];
         for (int i = 0; i < [result.keyList count]; i++) {
             if ([result.cityList[i] isEqualToString:DEFAULT_CITY]) {
-                [_suggestionResult.keyList addObject:result.keyList[i]];
-                [_suggestionResult.districtList addObject:result.districtList[i]];
+                [_suggestionResult.locationList addObject:[NSString stringWithFormat:@"%@ - %@", result.keyList[i], result.districtList[i]]];
                 [_suggestionResult.ptList addObject:result.ptList[i]];
             }
         }
@@ -130,8 +128,7 @@
         if (_suggestionResult == nil) {
             _suggestionResult = [[BicycleSuggestionResult alloc] initWithCapacity:0];
         }
-        [_suggestionResult.keyList removeAllObjects];
-        [_suggestionResult.districtList removeAllObjects];
+        [_suggestionResult.locationList removeAllObjects];
         [_suggestionResult.ptList removeAllObjects];
     }
 }
@@ -147,28 +144,53 @@
     }
 }
 
-#pragma mark - MLPAutoCompleteTextFieldDelegate
-- (BOOL)autoCompleteTextField:(MLPAutoCompleteTextField *)textField
-          shouldConfigureCell:(UITableViewCell *)cell
-       withAutoCompleteString:(NSString *)autocompleteString
-         withAttributedString:(NSAttributedString *)boldedString
-        forAutoCompleteObject:(id<MLPAutoCompletionObject>)autocompleteObject
-            forRowAtIndexPath:(NSIndexPath *)indexPath
+#pragma mark - MLPAutoCompleteTextField
+
+-(void) setAutoCompleteTextFieldType
 {
-    return true;
+    [_startTextField setAutoCompleteTableAppearsAsKeyboardAccessory:NO];
+    [_endTextField setAutoCompleteTableAppearsAsKeyboardAccessory:NO];
+    [_startTextField setAutoCompleteDataSource:self];
+    [_endTextField setAutoCompleteDataSource:self];
+    [_startTextField setAutoCompleteDelegate:self];
+    [_endTextField setAutoCompleteDelegate:self];
 }
 
+- (void)autoCompleteTextField:(MLPAutoCompleteTextField *)textField
+ possibleCompletionsForString:(NSString *)string
+            completionHandler:(void(^)(NSArray *suggestions))handler;
+{
+    dispatch_queue_t queue = dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_HIGH, 0);
+    dispatch_async(queue, ^{
+        NSArray *completions;
+        if ([textField.text length] > 2){
+            NSLog(@"Input %@", textField.text);
+            [self searchByKeyWord:textField.text];
+        }
+        if (_suggestionResult != nil) {
+            completions = _suggestionResult.locationList;
+        } else {
+            completions = [[NSArray alloc] init];
+        }
+        handler(completions);
+    });
+}
 
-/*IndexPath corresponds to the order of strings within the autocomplete table,
- not the original data source.
- autoCompleteObject may be nil if the selectedString had no object associated with it.
- */
 - (void)autoCompleteTextField:(MLPAutoCompleteTextField *)textField
   didSelectAutoCompleteString:(NSString *)selectedString
        withAutoCompleteObject:(id<MLPAutoCompletionObject>)selectedObject
             forRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    
+    NSLog(@"Selected : %@, index: %ld", selectedString, indexPath.row);
+    CLLocationCoordinate2D coordinate;
+    [[_suggestionResult.ptList objectAtIndex: indexPath.row]getValue:&coordinate];
+    if (textField == _startTextField) {
+        _startLoc = [[CLLocation alloc] initWithLatitude:coordinate.latitude longitude:coordinate.longitude];
+    } else if (textField == _endTextField) {
+        _endLoc = [[CLLocation alloc] initWithLatitude:coordinate.latitude longitude:coordinate.longitude];
+        
+    }
 }
+
 
 @end
