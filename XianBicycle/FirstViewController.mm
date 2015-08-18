@@ -12,11 +12,13 @@
 #import "CommonUtils.h"
 #import <CRToast/CRToast.h>
 
-@interface FirstViewController ()
+@interface FirstViewController () <UITableViewDataSource, UITableViewDelegate>
 
 @property (nonatomic) BMKMapView *mapView;
 @property (nonatomic) BMKLocationService *locService;
 @property (nonatomic) CLLocationCoordinate2D loc;
+@property (nonatomic, strong) NSArray *list;
+@property (weak, nonatomic) IBOutlet UITableView *tableView;
 
 @end
 
@@ -27,10 +29,15 @@
     // Do any additional setup after loading the view, typically from a nib.
     [self initBaiduMap];
     _service = [[XianBicycleService alloc] init];
+
+    self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc]
+            initWithBarButtonSystemItem:UIBarButtonSystemItemRefresh
+                                 target:self
+                                 action:@selector(search:)];
     
     UIBarButtonItem *item =
-    [[UIBarButtonItem alloc] initWithTitle:NSLocalizedString(@"btn_search", nil)
-                                     style:UIBarButtonItemStylePlain target:self action:@selector(searchCurrentLocation)];
+    [[UIBarButtonItem alloc] initWithTitle:NSLocalizedString(@"Map/List", nil)
+                                     style:UIBarButtonItemStylePlain target:self action:@selector(toggleListAndMap:)];
     
     self.navigationItem.rightBarButtonItem = item;
     self.navigationItem.title = NSLocalizedString(@"tab_nearby", nil);
@@ -67,6 +74,7 @@
     _loc = {DEFAULT_LAT, DEFAULT_LONG};
     [_mapView setCenterCoordinate:_loc];
 #endif
+    self.tableView.hidden = YES;
 }
 
 - (void)searchCurrentLocation
@@ -82,6 +90,16 @@
     _mapView.showsUserLocation = NO;//先关闭定位图层
     _mapView.userTrackingMode = BMKUserTrackingModeFollow;//设置定位的状态
     _mapView.showsUserLocation = YES;//显示定位图层
+}
+
+- (IBAction)toggleListAndMap:(id)sender {
+
+    UIView *currentView = _mapView.isHidden ? self.tableView : _mapView;
+    UIView *toView = _mapView.isHidden ? _mapView : self.tableView;
+    [UIView transitionFromView:currentView toView:toView duration:0.3f options:UIViewAnimationOptionShowHideTransitionViews|UIViewAnimationOptionTransitionFlipFromLeft completion:^(BOOL finished) {
+        currentView.hidden = YES;
+        toView.hidden = NO;
+    }];
 }
 
 - (void)doSearchByTerm: (NSString *)term {
@@ -138,11 +156,12 @@
     if (code == NetworkCodeNoError) {
         if ([data isKindOfClass:[ResponseBicycleSet class]]) {
             ResponseBicycleSet *response = data;
-            NSArray *siteList = response.siteList;
-            for (int i = 0; i < [siteList count]; i++) {
-                BicycleSetItem *item = [siteList objectAtIndex:i];
+            self.list = response.siteList;
+            for (int i = 0; i < [self.list count]; i++) {
+                BicycleSetItem *item = [self.list objectAtIndex:i];
                 [self addMarkerToMap:item];
             }
+            [self.tableView reloadData];
         }
     } else {
         NSString *title = NSLocalizedString(@"msg_error", nil);
@@ -189,4 +208,18 @@
 - (IBAction)search:(id)sender {
     [self searchCurrentLocation];
 }
+
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
+{
+    return self.list.count;
+}
+
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"BicycleCell" forIndexPath:indexPath];
+    BicycleSetItem *item = self.list[indexPath.row];
+    cell.textLabel.text = item.sitename;
+    return cell;
+}
+
 @end
